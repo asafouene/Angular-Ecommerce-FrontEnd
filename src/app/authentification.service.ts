@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
+import { ActivatedRoute ,Params} from '@angular/router';
 
 
 
@@ -13,8 +14,9 @@ export class AuthentificationService {
   isAuth=new Subject()
   autoriser=this.isAuth.asObservable()
   token:any
+  apiDB:any
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private activatedRoute:ActivatedRoute) {
     //this.autoriser.subscribe()
   }
   OnGetUser(){
@@ -29,9 +31,10 @@ export class AuthentificationService {
     return new Promise((result,rej)=>{
       this.http.get('http://localhost:3000/api').subscribe((res) => {
       result(res)
-    });
+    })
     })    
   }
+  
 
   getName(){
     this.nameAuth.subscribe((data)=>{
@@ -43,5 +46,24 @@ export class AuthentificationService {
   }
   ngOnInit(): void {
 
+  }
+  CheckToken(){
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
+    this.token=Object.getOwnPropertyDescriptors(params)})
+    this.OnGetApi().then((data)=>{
+    this.apiDB=data})
+
+    if(this.token.t.value===undefined){}
+    else
+      for (let i = 0; i < this.apiDB.length; i++) {
+        if(this.token.t.value===this.apiDB[i].token){
+          this.isAuth.next(true)
+          
+          
+          break
+        }
+        console.log(this.apiDB[i])        
+      }
+    
   }
 }

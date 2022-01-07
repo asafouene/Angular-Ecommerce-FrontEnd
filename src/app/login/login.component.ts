@@ -35,7 +35,6 @@ onSubmit(f:NgForm){
           this.http.patch(`http://localhost:3000/api/${this.usersDB[i].userID}`,{token:this.AuthentificationService.token}).subscribe(()=>{})
           this.router.navigateByUrl('/home?t='+this.AuthentificationService.token)
           
-        
           break          
         }
       else this.verifconnect="Email ou password incorrect"

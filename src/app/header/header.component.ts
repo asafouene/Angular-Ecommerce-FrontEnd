@@ -19,17 +19,14 @@ export class HeaderComponent implements OnInit {
 
   constructor(private AuthentificationService:AuthentificationService,private router:Router,private activatedRoute:ActivatedRoute,private http:HttpClient) {
     
+    
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+      
 
+    
   }
-
-  GoToProduct(){
-    this.router.navigateByUrl('/product?t='+this.AuthentificationService.token).then((res)=>{})
-  }
-
-
   deconnexion(){
     for (let i = 0; i < this.apiDB.length; i++) {
       if(this.token.t.value==this.apiDB[i].token){
@@ -43,5 +40,12 @@ export class HeaderComponent implements OnInit {
     
 
   }
-}
+  GoToProduct(){
+    this.router.navigateByUrl('/product?t='+this.AuthentificationService.token).then((res)=>{})
+  }
+  GoToHome(){
+    this.router.navigateByUrl('/home?t='+this.AuthentificationService.token).then((res)=>{})
+  }
 
+
+}
