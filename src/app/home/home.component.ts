@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthentificationService } from '../authentification.service';
 import { ProductService } from '../product.service';
 
 @Component({
@@ -12,8 +11,7 @@ export class HomeComponent implements OnInit {
   items:any
   firstItem:any
 
-  constructor(private productService:ProductService,private AuthentificationService:AuthentificationService) {  
-        
+  constructor(private productService:ProductService) {
     this.productService.OnGetProduct().then((data_product)=>{
       this.items=data_product
       this.firstItem=this.items[0]})  
@@ -22,7 +20,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.AuthentificationService.CheckToken()
   }
   
 }

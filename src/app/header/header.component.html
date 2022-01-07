@@ -1,24 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <button class="navbar-brand" (click)="GoToHome()">Boutique</button>
+      <a class="navbar-brand" routerLink="/home">Boutique</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <button class="nav-link active"  *ngIf="isAuth">Home</button>
+            <a class="nav-link active" routerLink="/home"  *ngIf="isAuth">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/login" *ngIf="!isAuth">login</a>
           </li>
         <li class="nav-item">
-          <button class="nav-link" (click)="GoToProduct()" *ngIf="isAuth">Produit</button>
+          <a class="nav-link" routerLink="/product" *ngIf="isAuth">Produit</a>
         </li>
         </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-danger" (click)="deconnexion()" *ngIf="isAuth">Deconnexion</button>
-        </form>
+        <div class="d-flex flex-row-reverse" *ngIf="isAuth">
+          <div class="p-2">
+          <button type="button" class="btn btn-light position-relative">
+            <img src="https://img.icons8.com/ios/30/000000/shopping-cart-loaded--v2.png"/>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+              <span class="visually-hidden">unread messages</span>
+            </span>
+          </button>
+          </div>
+          <div class="p-2">
+          <button class="btn btn-outline-danger" (click)="deconnexion()" >Deconnexion</button>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
