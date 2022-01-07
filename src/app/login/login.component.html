@@ -1,0 +1,16 @@
+<div  style="max-width: 50%;margin-left: auto;margin-right: auto;margin-top: 5%;">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="mb-3" >
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" #email="ngModel" ngModel name="email" required>
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <small *ngIf="email.touched&&email.invalid">email obligatoire</small>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" #pwd="ngModel" ngModel name="pwd" required>
+    </div>
+    <div *ngIf="verifconnect" class="alert alert-danger"> {{verifconnect}} </div>
+    <button class="btn btn-primary" [disabled]="f.invalid">Connect</button>
+  </form>
+</div>

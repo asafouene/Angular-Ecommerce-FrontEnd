@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "userID": 1,
+      "email": "safwen@outlook.tn",
+      "username": "safwen",
+      "password": "1234",
+      "token": 1234,
+      "delay": 0
+    }
+  ],
+  "api": [
+    {
+      "id": 1,
+      "token": 678031,
+      "delay": 0
+    }
+  ],
+  "items": [
+    {
+      "name": "Asus vivobook",
+      "prix": 1500,
+      "img_src": "assets/img/pc-portable-asus-vivobook-flip-tp470ea-ec033t-14.jpeg",
+      "desc": "Ecran 11.6 HD - Processeur Intel Celeron N4020, up to 2.8 GHz, 4 Mo de mémoire dédiée - Mémoire 4 Go"
+    },
+    {
+      "name": "Huawei matebook",
+      "prix": 1200,
+      "img_src": "assets/img/huawei-matebook.jpeg",
+      "desc": "Ecran 14 LED Full HD - Processeur AMD Dual Core 3020e, jusquà 2.6 Ghz, 4 Go de mémoire cache"
+    },
+    {
+      "name": "lenovo Idealpad",
+      "prix": 979,
+      "img_src": "assets/img/lenovo-ideapad.jpeg",
+      "desc": "Ecran 15.6 HD LED - Processeur Intel Celeron Dual Core N4020, 2.8 Ghz, 4 Mo de mémoire cache"
+    }
+  ]
+}
