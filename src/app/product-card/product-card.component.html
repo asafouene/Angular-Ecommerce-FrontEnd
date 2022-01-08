@@ -1,12 +1,12 @@
-<div style="margin-top:80px;"></div>
+<div style="margin-top:100px;"></div>
 <div *ngFor="let item of this.items"><div class="float-start"> 
-<div  class="card" style="width: 30rem;">
-    <img src={{item.img_src}} class="card-img-top" alt="..." style="height: 350px;">
+<div  class="card" style="width: 22rem;height: 35rem;">
+    <img src={{item.img_src}} class="card-img-top" alt="..." style="height: 300px;width: auto;">
     <div class="card-body">
       <h5 class="card-title">{{item.name}}</h5>
       <p class="card-text">{{item.desc}}</p>
       <p class="fw-bold"> {{item.prix | prix}} </p>
-      <button class="btn btn-primary" (click)="AddToCard()">Ajouter au panier</button>
+      <button class="btn btn-primary" style="bottom: 25px;left: 15px;position:absolute;" (click)="AddToCard()">Ajouter au panier</button>
     </div>
   </div>
 </div>

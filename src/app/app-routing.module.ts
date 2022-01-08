@@ -11,7 +11,7 @@ import { LoginAthGuard } from './login-ath.guard';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
-  {path:'login',component:LoginComponent,canActivate:[LoginAthGuard]},
+  {path:'login',component:LoginComponent},
   {path:'product',component:ProductCardComponent,canActivate:[AuthGuard]}
 ];
 
