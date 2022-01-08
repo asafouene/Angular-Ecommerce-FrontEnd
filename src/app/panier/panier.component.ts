@@ -8,15 +8,20 @@ import { ProductService } from '../product.service';
 })
 export class PanierComponent implements OnInit {
 itemsIN:any=[]
+panierProducts:any=[]
 somme=0
 
   constructor(private productService:ProductService) {
+
     for (let i = 0; i < this.productService.DansPanier.length; i++) {
       this.itemsIN[i] = this.productService.DansPanier[i] 
       this.somme+=this.itemsIN[i].prix
-      
-    } 
+    }
+    
   }
   ngOnInit(): void {
+    do {
+      
+    } while (this.itemsIN[0]===undefined); 
   }
 }

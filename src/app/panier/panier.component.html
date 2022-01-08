@@ -4,6 +4,7 @@
         <th scope="col">Image</th>
         <th scope="col">Nom</th>
         <th scope="col">Description</th>
+        <th scope="col">Quantité</th>
         <th scope="col">Prix</th>
       </tr>
     </thead>
@@ -12,6 +13,7 @@
         <td><img src={{item.img_src}} alt="" style="width: 7rem;height: 6rem;"></td>
         <td>{{ item.name }}</td>
         <td>{{item.desc}}</td>
+        <td>{{item.qte}}</td>
         <td>{{item.prix|prix}}</td>
       </tr>
     </tbody>

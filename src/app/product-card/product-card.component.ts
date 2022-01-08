@@ -10,6 +10,8 @@ import { AuthentificationService } from '../authentification.service';
 export class ProductCardComponent implements OnInit {
 items:any
 isAuth:any
+newProductInPanier:any
+indiceProductInPanier:any
 
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService) { 
     this.productService.OnGetProduct().then((data)=>{
@@ -23,14 +25,32 @@ isAuth:any
   
    }
    AddToCard(item:any){
-
-    
-    this.productService.panier.next(++this.productService.pp)
-    this.productService.DansPanier[this.productService.pp-1]=item
-      console.log("data = "+[this.productService.pp-1]);
-      console.log(this.productService.DansPanier[this.productService.pp-1]);
+    if(this.productService.pp==0){
+      this.productService.panier.next(++this.productService.pp)
+      this.productService.DansPanier[this.productService.pp-1]=item
+      this.productService.DansPanier[this.productService.pp-1].qte=1
       
+    }
+    else{
       
-      
+      for (let i = 0; i < this.productService.DansPanier.length; i++) {
+        if(item.id==this.productService.DansPanier[i].id){
+          this.newProductInPanier=false
+          this.indiceProductInPanier=i
+          console.log(this.newProductInPanier);
+          
+        }
+        else this.newProductInPanier=true
+      }
+      if(this.newProductInPanier){
+        this.productService.panier.next(++this.productService.pp)
+        this.productService.DansPanier[this.productService.pp-1]=item
+        this.productService.DansPanier[this.productService.pp-1].qte=1
+      }
+      else this.productService.DansPanier[this.indiceProductInPanier].qte++
+    }
+   }
+   CheckProductPanier(){
+     
    }
 }
