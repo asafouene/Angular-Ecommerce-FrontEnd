@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from '../authentification.service';
 import { Router} from '@angular/router';
+import { ProductService } from '../product.service';
 
 
 
@@ -11,11 +12,16 @@ import { Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   isAuth:any
-  constructor(private AuthentificationService:AuthentificationService,private router:Router) {
+  panier=0
+  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {
   }
   ngOnInit(): void {    
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
+    })
+    this.productService.p.subscribe((data)=>{
+      this.panier=data
+      console.log(data);
     })
   }
   deconnexion(){

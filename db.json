@@ -18,18 +18,21 @@
   ],
   "items": [
     {
+      "id":"1",
       "name": "Asus vivobook",
       "prix": 1500,
       "img_src": "assets/img/pc-portable-asus-vivobook-flip-tp470ea-ec033t-14.jpeg",
       "desc": "Ecran 11.6 HD - Processeur Intel Celeron N4020, up to 2.8 GHz, 4 Mo de mémoire dédiée - Mémoire 4 Go"
     },
     {
+      "id":"2",
       "name": "Huawei matebook",
       "prix": 1200,
       "img_src": "assets/img/huawei-matebook.jpeg",
       "desc": "Ecran 14 LED Full HD - Processeur AMD Dual Core 3020e, jusquà 2.6 Ghz, 4 Go de mémoire cache"
     },
     {
+      "id":"3",
       "name": "lenovo Idealpad",
       "prix": 979,
       "img_src": "assets/img/lenovo-ideapad.jpeg",

@@ -10,7 +10,6 @@ import { AuthentificationService } from '../authentification.service';
 export class ProductCardComponent implements OnInit {
 items:any
 isAuth:any
-token:any
 
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService) { 
     this.productService.OnGetProduct().then((data)=>{
@@ -22,5 +21,9 @@ token:any
   ngOnInit(): void { 
   
    }
-
+   AddToCard(){
+    
+    this.productService.panier.next(this.productService.pp++)
+    
+   }
 }

@@ -14,12 +14,8 @@ export class HomeComponent implements OnInit {
   constructor(private productService:ProductService) {
     this.productService.OnGetProduct().then((data_product)=>{
       this.items=data_product
-      this.firstItem=this.items[0]})  
-              
+      this.firstItem=this.items[0]})           
   }
-
   ngOnInit(): void {
-
-  }
-  
+  } 
 }
