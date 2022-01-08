@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PrixPipe } from './prix.pipe';
+import { AuthGuard } from './auth.guard';
   
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     HomeComponent,
     ProductCardComponent,
+    PrixPipe,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

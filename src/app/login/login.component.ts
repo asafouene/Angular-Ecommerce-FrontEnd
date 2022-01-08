@@ -28,6 +28,7 @@ onSubmit(f:NgForm){
     if((f.value.email==this.usersDB[i].email)&&(f.value.pwd==this.usersDB[i].password)){
           this.AuthentificationService.setName(this.usersDB[i].name)
           this.AuthentificationService.isAuth.next(true)
+          this.AuthentificationService.auth=true
           this.router.navigateByUrl('/home')
           break          
         }

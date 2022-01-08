@@ -16,7 +16,10 @@ isAuth:any
       this.items=data}) 
       this.authentifacationService.autoriser.subscribe((data)=>{
         this.isAuth=data
-        })    
+        })
+        if (this.isAuth) {
+          
+        }
  }
   ngOnInit(): void { 
   

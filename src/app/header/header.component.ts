@@ -19,13 +19,14 @@ export class HeaderComponent implements OnInit {
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
     })
-    this.productService.p.subscribe((data)=>{
+    this.productService.panier.subscribe((data)=>{
       this.panier=data
       console.log(data);
     })
   }
   deconnexion(){
     this.AuthentificationService.isAuth.next(false)
+    this.productService.panier.next(0)
     this.router.navigateByUrl('/home')
   }
 }

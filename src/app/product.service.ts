@@ -9,7 +9,6 @@ import { Subject } from 'rxjs';
 export class ProductService implements OnInit {
   pp=0
   panier=new Subject<number>()
-  p=this.panier.asObservable()
   jsonDataResult: any
   constructor(private http: HttpClient) {
   }

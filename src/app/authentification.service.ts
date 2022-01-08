@@ -10,8 +10,12 @@ import { Subject } from 'rxjs';
 export class AuthentificationService {
 
   nameAuth=new Subject()
+
   isAuth=new Subject()
   autoriser=this.isAuth.asObservable()
+
+  auth=false
+  aut=this.isAuth.asObservable()
 
   constructor(private http: HttpClient) {
   }
