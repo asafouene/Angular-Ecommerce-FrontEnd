@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
     })
     this.productService.panier.subscribe((data)=>{
       this.panier=data
-      console.log(data);
     })
   }
   deconnexion(){

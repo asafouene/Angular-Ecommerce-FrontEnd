@@ -18,12 +18,14 @@
         </ul>
         <div class="d-flex flex-row-reverse" *ngIf="isAuth">
           <div class="p-2">
-          <button type="button" class="btn btn-light position-relative">
+          <button type="button" class="btn btn-light position-relative"><a routerLink="/panier">
             <img src="https://img.icons8.com/ios/30/000000/shopping-cart-loaded--v2.png"/>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              
               {{panier}}
+              
               <span class="visually-hidden">unread messages</span>
-            </span>
+            </span></a>
           </button>
           </div>
           <div class="p-2">

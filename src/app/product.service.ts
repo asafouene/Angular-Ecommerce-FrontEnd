@@ -10,6 +10,7 @@ export class ProductService implements OnInit {
   pp=0
   panier=new Subject<number>()
   jsonDataResult: any
+  DansPanier:any=[]
   constructor(private http: HttpClient) {
   }
   OnGetProduct(){
@@ -21,7 +22,6 @@ export class ProductService implements OnInit {
     })
   }
   ngOnInit(): void {
-      //this.panier.next(0)
       
   }
 }

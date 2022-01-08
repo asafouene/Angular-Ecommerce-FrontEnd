@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PrixPipe } from './prix.pipe';
 import { AuthGuard } from './auth.guard';
+import { PanierComponent } from './panier/panier.component';
   
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AuthGuard } from './auth.guard';
     HomeComponent,
     ProductCardComponent,
     PrixPipe,
+    PanierComponent,
   ],
   imports: [
     BrowserModule,

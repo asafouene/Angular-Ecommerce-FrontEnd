@@ -14,19 +14,23 @@ isAuth:any
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService) { 
     this.productService.OnGetProduct().then((data)=>{
       this.items=data}) 
-      this.authentifacationService.autoriser.subscribe((data)=>{
+
+    this.authentifacationService.autoriser.subscribe((data)=>{
         this.isAuth=data
         })
-        if (this.isAuth) {
-          
-        }
  }
   ngOnInit(): void { 
   
    }
-   AddToCard(){
+   AddToCard(item:any){
+
     
-    this.productService.panier.next(this.productService.pp++)
-    
+    this.productService.panier.next(++this.productService.pp)
+    this.productService.DansPanier[this.productService.pp-1]=item
+      console.log("data = "+[this.productService.pp-1]);
+      console.log(this.productService.DansPanier[this.productService.pp-1]);
+      
+      
+      
    }
 }
