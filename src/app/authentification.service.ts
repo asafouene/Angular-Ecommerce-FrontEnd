@@ -10,7 +10,7 @@ import { Subject } from 'rxjs';
 export class AuthentificationService {
 
   nameAuth=new Subject()
-
+  role=new Subject<number>()
   isAuth=new Subject()
   autoriser=this.isAuth.asObservable()
 

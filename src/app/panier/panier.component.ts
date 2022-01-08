@@ -15,7 +15,7 @@ somme=0
 
     for (let i = 0; i < this.productService.DansPanier.length; i++) {
       this.itemsIN[i] = this.productService.DansPanier[i] 
-      this.somme+=this.itemsIN[i].prix
+      this.somme+=this.itemsIN[i].prix*this.itemsIN[i].qte
     }
     
   }

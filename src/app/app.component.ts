@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthentificationService } from './authentification.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,5 +9,6 @@ import { AuthentificationService } from './authentification.service';
 })
 export class AppComponent {
   title = 'e-commerce';
+
   
 }

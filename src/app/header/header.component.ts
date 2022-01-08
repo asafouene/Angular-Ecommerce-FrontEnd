@@ -5,6 +5,7 @@ import { ProductService } from '../product.service';
 
 
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -13,6 +14,7 @@ import { ProductService } from '../product.service';
 export class HeaderComponent implements OnInit {
   isAuth:any
   panier=0
+  role=0
   constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {
   }
   ngOnInit(): void {    
@@ -22,6 +24,11 @@ export class HeaderComponent implements OnInit {
     this.productService.panier.subscribe((data)=>{
       this.panier=data
     })
+
+    this.AuthentificationService.role.subscribe((data)=>{
+      this.role=data      
+    })
+    
   }
   deconnexion(){
     this.AuthentificationService.isAuth.next(false)

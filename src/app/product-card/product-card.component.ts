@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { AuthentificationService } from '../authentification.service';
 
+
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
@@ -32,25 +33,27 @@ indiceProductInPanier:any
       
     }
     else{
-      
-      for (let i = 0; i < this.productService.DansPanier.length; i++) {
+      for (let i = 0; i < this.productService.pp; i++) {
         if(item.id==this.productService.DansPanier[i].id){
           this.newProductInPanier=false
           this.indiceProductInPanier=i
-          console.log(this.newProductInPanier);
-          
+          break
         }
-        else this.newProductInPanier=true
+        else {
+          this.newProductInPanier=true 
+        }
       }
+      console.log(this.newProductInPanier)
+
+
       if(this.newProductInPanier){
         this.productService.panier.next(++this.productService.pp)
         this.productService.DansPanier[this.productService.pp-1]=item
         this.productService.DansPanier[this.productService.pp-1].qte=1
       }
-      else this.productService.DansPanier[this.indiceProductInPanier].qte++
+      else {
+        this.productService.DansPanier[this.indiceProductInPanier].qte++
+        this.productService.panier.next(++this.productService.pp)}
     }
-   }
-   CheckProductPanier(){
-     
    }
 }

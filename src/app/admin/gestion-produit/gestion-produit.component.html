@@ -1,0 +1,40 @@
+<table class="table table-bordered" style="margin-top:10rem;max-width: 80rem;margin-left: auto;margin-right: auto;">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Description</th>
+        <th scope="col">Prix</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td><img src={{item.img_src}} alt="" style="width: 7rem;height: 6rem;"></td>
+        <td>{{ item.name }}</td>
+        <td>{{item.desc}}</td>
+        <td>{{item.prix|prix}}</td>
+        <td> <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> <fa-icon [icon]="faedit"></fa-icon> </button> <button class="btn btn-outline-danger"> <fa-icon [icon]="fatrash"></fa-icon> </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 10rem;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

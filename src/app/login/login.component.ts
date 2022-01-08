@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   verifEmail=false
   verifconnect:any
   apiDB:any
+  role:any
   
 
   constructor(private AuthentificationService:AuthentificationService,private router:Router) {
@@ -27,6 +28,7 @@ onSubmit(f:NgForm){
   for (let i = 0; i < this.usersDB.length; i++) {
     if((f.value.email==this.usersDB[i].email)&&(f.value.pwd==this.usersDB[i].password)){
           this.AuthentificationService.setName(this.usersDB[i].name)
+          this.AuthentificationService.role.next(this.usersDB[i].Role)
           this.AuthentificationService.isAuth.next(true)
           this.AuthentificationService.auth=true
           this.router.navigateByUrl('/home')

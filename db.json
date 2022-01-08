@@ -5,8 +5,14 @@
       "email": "safwen@outlook.tn",
       "username": "safwen",
       "password": "1234",
-      "token": 1234,
-      "delay": 0
+      "Role": 0
+    },
+    {
+      "userID": 2,
+      "email": "admin@outlook.tn",
+      "username": "admin",
+      "password": "1234",
+      "Role": 1
     }
   ],
   "api": [
