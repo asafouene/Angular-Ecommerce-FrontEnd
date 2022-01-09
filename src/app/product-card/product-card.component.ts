@@ -56,4 +56,8 @@ indiceProductInPanier:any
         this.productService.panier.next(++this.productService.pp)}
     }
    }
+   afficheDetail(item:any){
+     
+
+   }
 }

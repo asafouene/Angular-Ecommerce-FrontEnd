@@ -24,53 +24,25 @@
   ],
   "items": [
     {
-      "id":"1",
-      "name": "Asus vivobook",
-      "prix": 1500,
-      "img_src": "assets/img/pc-portable-asus-vivobook-flip-tp470ea-ec033t-14.jpeg",
-      "desc": "Ecran 11.6 HD - Processeur Intel Celeron N4020, up to 2.8 GHz, 4 Mo de mémoire dédiée - Mémoire 4 Go"
+      "name": "ASUS EXPERTBOOK B9",
+      "prix": "5149",
+      "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/b/9/b9400cea-kc0452r--6.jpg",
+      "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache",
+      "id": "2Wp_nd6"
     },
     {
-      "id":"2",
-      "name": "Huawei matebook",
-      "prix": 1200,
-      "img_src": "assets/img/huawei-matebook.jpeg",
-      "desc": "Ecran 14 LED Full HD - Processeur AMD Dual Core 3020e, jusquà 2.6 Ghz, 4 Go de mémoire cache"
+      "name": "Apple MacBook Pro 13,3",
+      "prix": "4489",
+      "img_src": "https://www.zoom.com.tn/42021-thickbox_default/apple-macbook-pro-133-retina-apple-m1-256go-ssd-8go-touch-bar-mac-os-big-sur-myd82fna.jpg",
+      "desc": "Processeur : Apple M1 Puce Apple M1 (CPU 8 coeurs / GPU 8 coeurs / Neural Engine 16 coeurs) ) / Mémoire : 8Go (DDR4 3733 MHz )/Disque dur : 256Go SSD  / Écran Rétina 13.3\" LED  / Caméra FaceTime HD / Wi-Fi / Bluetooth / macOS Big Sur",
+      "id": "L6tupyR"
     },
     {
-      "id":"3",
-      "name": "lenovo Idealpad",
-      "prix": 979,
-      "img_src": "assets/img/lenovo-ideapad.jpeg",
-      "desc": "Ecran 15.6 HD LED - Processeur Intel Celeron Dual Core N4020, 2.8 Ghz, 4 Mo de mémoire cache"
-    },
-    {
-      "id":"4",
-      "name": "MSI MODERN B10MW",
-      "prix": 1979,
-      "img_src": "assets/img/pc-portable-msi-modern-b10mw-468t-i3-10e-gen-12-go-noir-onyx.jpeg",
-      "desc": "Écran 14  Full HD - Processeur Intel Core i3-10110U, up to 4.1 Ghz, 4 Mo de cache"
-    },
-    {
-      "id":"5",
-      "name": "ACER EXTENSA 15",
-      "prix": 2200,
-      "img_src": "assets/img/pc-portable-acer-extensa-15-i7-11e-gen-12-go.jpeg",
-      "desc": "Ecran 15.6 FHD IPS - Processeur Intel Core i7-1165G7, 11è Génération, up to 4.7 GHz , 12 Mo de mémoire cache"
-    },
-    {
-      "id":"6",
-      "name": "HUAWEI MATEBOOK D15 2021",
-      "prix": 2300,
-      "img_src": "assets/img/pc-portable-huawei-matebook-d15-2021-i5-10e-gen-8-go.jpeg",
-      "desc": "Ecran 15.6 IPS Full HD - Processeur intel Core i5-10210U, up to 4.1 Ghz, 6 Mo de mémoire cache"
-    },
-    {
-      "id":"7",
-      "name": "lHP PAVILION X360",
-      "prix": 2600,
-      "img_src": "assets/img/pc-portable-hp-pavilion-x360-14-dy0001nk-i5-11e-gen-8-go-256-go-ssd-win10-gold.jpeg",
-      "desc": "Ecran 14 IPS - Processeur Intel Core i5-1135G7, 11è Génération, up to 4.2, 8 Mo de mémoire cache"
+      "name": "Apple iMac 24'' Retina 4.5K",
+      "prix": "4999",
+      "img_src": "https://www.zoom.com.tn/43717-thickbox_default/apple-imac-24-retina-45k-puce-m1-8go-256go-ssd-silver.jpg",
+      "desc": "Puce Apple M1 (CPU 8 cœurs avec 4 cœurs de performance et 4 cœurs à haute efficacité énergétique - GPU7 cœurs -Neural Engine 16 cœurs) / Mémoire : 8 Go de mémoire unifiée / Disque dur : 256 Go SSD/ Écran Retina 4,5K de 24 pouces  ( 4 480 x 2 520 pixels ) / Caméra FaceTime HD 1080p  / Wi-Fi / Bluetooth / Connexions et extension :Deux ports Thunderbolt/USB 4 avec prise en charge de : DisplayPort - Thunderbolt 3  - USB 4 -USB 3.1 Gen 2- Prise casque 3,5 mm/ macOS Big Sur/ Garantie 1an",
+      "id": "90hNQkw"
     }
   ]
 }
