@@ -13,8 +13,8 @@
         <td><img src={{item.img_src}} alt="" style="width: 7rem;height: 6rem;"></td>
         <td>{{ item.name }}</td>
         <td>{{item.desc}}</td>
-        <td>{{item.prix|prix}}</td>
-        <td> <button (click)="OnEdit(item)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal"> <fa-icon [icon]="faedit"></fa-icon> </button> <button (click)="OnDelate(item.id)" class="btn btn-outline-danger"> <fa-icon [icon]="fatrash"></fa-icon> </button>
+        <td style="width: 10rem;">{{item.prix|prix}}</td>
+        <td style="text-align: center;vertical-align: middle;width: 9rem;"> <button (click)="OnEdit(item)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal"> <fa-icon [icon]="faedit"></fa-icon> </button> <button (click)="OnDelate(item.id)" class="btn btn-outline-danger"> <fa-icon [icon]="fatrash"></fa-icon> </button>
         </td>
       </tr>
     </tbody>

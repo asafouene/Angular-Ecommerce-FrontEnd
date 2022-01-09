@@ -29,7 +29,6 @@
       "prix": "5149",
       "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/b/9/b9400cea-kc0452r--6.jpg",
       "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache"
-      
     },
     {
       "id": "L6tupyR",
@@ -44,6 +43,13 @@
       "prix": "4999",
       "img_src": "https://www.zoom.com.tn/43717-thickbox_default/apple-imac-24-retina-45k-puce-m1-8go-256go-ssd-silver.jpg",
       "desc": "Puce Apple M1 (CPU 8 cœurs avec 4 cœurs de performance et 4 cœurs à haute efficacité énergétique - GPU7 cœurs -Neural Engine 16 cœurs) / Mémoire : 8 Go de mémoire unifiée / Disque dur : 256 Go SSD/ Écran Retina 4,5K de 24 pouces  ( 4 480 x 2 520 pixels ) / Caméra FaceTime HD 1080p  / Wi-Fi / Bluetooth / Connexions et extension :Deux ports Thunderbolt/USB 4 avec prise en charge de : DisplayPort - Thunderbolt 3  - USB 4 -USB 3.1 Gen 2- Prise casque 3,5 mm/ macOS Big Sur/ Garantie 1an"
+    },
+    {
+      "name": "ASUS ZENBOOK FLIP UX363EA",
+      "prix": "1400",
+      "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/s/a/sans-titre-1_626.jpg",
+      "desc": "Ecran 13.3'' FULL HD Tactile - Processeur: Intel® Core™ I5-1135G7 (4.2 GHz, 8Mo Mémoire cache, Quad-Core) - Systéme d'exploitation: FreeDos - Mémoire RAM: 8 Go - Disque Dur: 512 Go SSD - Carte Graphique: Intel HD Graphics - avec wifi - Bluetooth - Couleur: Gris - Garantie: 1 an",
+      "id": "_stZYuG"
     }
   ]
 }

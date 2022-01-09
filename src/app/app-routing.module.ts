@@ -6,6 +6,7 @@ import { ProductCardComponent } from './_components/product-card/product-card.co
 import { AuthGuard } from './auth.guard';
 import { PanierComponent } from './_components/panier/panier.component';
 import { GestionProduitComponent } from './_components/admin/gestion-produit/gestion-produit.component';
+import { ProfilComponent } from './_components/profil/profil.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'product',component:ProductCardComponent,canActivate:[AuthGuard]},
   {path:'panier',component:PanierComponent,canActivate:[AuthGuard]},
-  {path:'gestionproduit',component:GestionProduitComponent,canActivate:[AuthGuard]}
+  {path:'gestionproduit',component:GestionProduitComponent,canActivate:[AuthGuard]},
+  {path:'profil',component:ProfilComponent,canActivate:[AuthGuard]}
+
 ];
 
 @NgModule({

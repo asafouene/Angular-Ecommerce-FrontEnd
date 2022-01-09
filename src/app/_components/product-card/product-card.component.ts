@@ -44,7 +44,6 @@ indiceProductInPanier:any
           this.newProductInPanier=true 
         }
       }
-      console.log(this.newProductInPanier)
 
 
       if(this.newProductInPanier){

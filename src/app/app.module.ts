@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './_components/login/login.component';
@@ -14,6 +13,7 @@ import { AuthGuard } from './auth.guard';
 import { PanierComponent } from './_components/panier/panier.component';
 import { GestionProduitComponent } from './_components/admin/gestion-produit/gestion-produit.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProfilComponent } from './_components/profil/profil.component';
   
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PrixPipe,
     PanierComponent,
     GestionProduitComponent,
+    ProfilComponent,
   ],
   imports: [
     BrowserModule,
