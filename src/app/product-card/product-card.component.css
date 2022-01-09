@@ -1,3 +1,9 @@
-p:hover{
-    white-space: none !important
+.collapsesaf.show{
+    white-space: none;
+}
+.collapsesaf{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100rem;
 }

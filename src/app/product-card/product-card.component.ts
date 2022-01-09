@@ -14,6 +14,7 @@ isAuth:any
 newProductInPanier:any
 indiceProductInPanier:any
 
+
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService) { 
     this.productService.OnGetProduct().then((data)=>{
       this.items=data}) 
