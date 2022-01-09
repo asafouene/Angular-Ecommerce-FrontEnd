@@ -24,25 +24,26 @@
   ],
   "items": [
     {
+      "id": "2Wp_nd6",
       "name": "ASUS EXPERTBOOK B9",
       "prix": "5149",
       "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/b/9/b9400cea-kc0452r--6.jpg",
-      "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache",
-      "id": "2Wp_nd6"
+      "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache"
+      
     },
     {
+      "id": "L6tupyR",
       "name": "Apple MacBook Pro 13,3",
       "prix": "4489",
       "img_src": "https://www.zoom.com.tn/42021-thickbox_default/apple-macbook-pro-133-retina-apple-m1-256go-ssd-8go-touch-bar-mac-os-big-sur-myd82fna.jpg",
-      "desc": "Processeur : Apple M1 Puce Apple M1 (CPU 8 coeurs / GPU 8 coeurs / Neural Engine 16 coeurs) ) / Mémoire : 8Go (DDR4 3733 MHz )/Disque dur : 256Go SSD  / Écran Rétina 13.3\" LED  / Caméra FaceTime HD / Wi-Fi / Bluetooth / macOS Big Sur",
-      "id": "L6tupyR"
+      "desc": "Processeur : Apple M1 Puce Apple M1 (CPU 8 coeurs / GPU 8 coeurs / Neural Engine 16 coeurs) ) / Mémoire : 8Go (DDR4 3733 MHz )/Disque dur : 256Go SSD  / Écran Rétina 13.3\" LED  / Caméra FaceTime HD / Wi-Fi / Bluetooth / macOS Big Sur"
     },
     {
+      "id": "90hNQkw",
       "name": "Apple iMac 24'' Retina 4.5K",
       "prix": "4999",
       "img_src": "https://www.zoom.com.tn/43717-thickbox_default/apple-imac-24-retina-45k-puce-m1-8go-256go-ssd-silver.jpg",
-      "desc": "Puce Apple M1 (CPU 8 cœurs avec 4 cœurs de performance et 4 cœurs à haute efficacité énergétique - GPU7 cœurs -Neural Engine 16 cœurs) / Mémoire : 8 Go de mémoire unifiée / Disque dur : 256 Go SSD/ Écran Retina 4,5K de 24 pouces  ( 4 480 x 2 520 pixels ) / Caméra FaceTime HD 1080p  / Wi-Fi / Bluetooth / Connexions et extension :Deux ports Thunderbolt/USB 4 avec prise en charge de : DisplayPort - Thunderbolt 3  - USB 4 -USB 3.1 Gen 2- Prise casque 3,5 mm/ macOS Big Sur/ Garantie 1an",
-      "id": "90hNQkw"
+      "desc": "Puce Apple M1 (CPU 8 cœurs avec 4 cœurs de performance et 4 cœurs à haute efficacité énergétique - GPU7 cœurs -Neural Engine 16 cœurs) / Mémoire : 8 Go de mémoire unifiée / Disque dur : 256 Go SSD/ Écran Retina 4,5K de 24 pouces  ( 4 480 x 2 520 pixels ) / Caméra FaceTime HD 1080p  / Wi-Fi / Bluetooth / Connexions et extension :Deux ports Thunderbolt/USB 4 avec prise en charge de : DisplayPort - Thunderbolt 3  - USB 4 -USB 3.1 Gen 2- Prise casque 3,5 mm/ macOS Big Sur/ Garantie 1an"
     }
   ]
 }

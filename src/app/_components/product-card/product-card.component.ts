@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
-import { AuthentificationService } from '../authentification.service';
+import { ProductService } from 'src/app/_services/product.service';
+import { AuthentificationService } from 'src/app/_services/authentification.service';
 
 
 @Component({
@@ -35,7 +35,7 @@ indiceProductInPanier:any
     }
     else{
       for (let i = 0; i < this.productService.pp; i++) {
-        if(item.id==this.productService.DansPanier[i].id){
+        if(item.id===this.productService.DansPanier[i].id){
           this.newProductInPanier=false
           this.indiceProductInPanier=i
           break

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthentificationService } from 'src/app/authentification.service';
-import { ProductService } from 'src/app/product.service';
+import { AuthentificationService } from 'src/app/_services/authentification.service';
+import { ProductService } from 'src/app/_services/product.service';
 import { faEdit,faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 import { Route, Router } from '@angular/router';
@@ -38,14 +38,14 @@ export class GestionProduitComponent implements OnInit {
     this.itemEdit=itemOn
   }
   onSave(id:any,f:any){
-    let newitem={
+    let edititem={
       id:id,
       name:f.name,
       prix:f.prix,
       img_src:f.img_src,
       desc:f.desc
     }
-    this.http.put("http://localhost:3000/items/"+id ,newitem).subscribe()
+    this.http.put("http://localhost:3000/items/"+id ,edititem).subscribe()
   }
   onAdd(f:any){
     this.http.post("http://localhost:3000/items",f).subscribe()
