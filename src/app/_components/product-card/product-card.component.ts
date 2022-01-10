@@ -13,25 +13,30 @@ items:any
 isAuth:any
 newProductInPanier:any
 indiceProductInPanier:any
+pages:any[]=[]
+itemsPerPage:any[]=[]
 
 
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService) { 
     this.productService.OnGetProduct().then((data)=>{
-      this.items=data}) 
+    this.items=data}).then(()=>{
+      this.calculNumberPages()}).then(()=>{
+      this.pagination(0)
+    })
 
     this.authentifacationService.autoriser.subscribe((data)=>{
         this.isAuth=data
         })
+
  }
   ngOnInit(): void { 
-  
+    
    }
    AddToCard(item:any){
     if(this.productService.pp==0){
       this.productService.panier.next(++this.productService.pp)
       this.productService.DansPanier[this.productService.pp-1]=item
-      this.productService.DansPanier[this.productService.pp-1].qte=1
-      
+      this.productService.DansPanier[this.productService.pp-1].qte=1 
     }
     else{
       for (let i = 0; i < this.productService.pp; i++) {
@@ -44,8 +49,6 @@ indiceProductInPanier:any
           this.newProductInPanier=true 
         }
       }
-
-
       if(this.newProductInPanier){
         this.productService.panier.next(++this.productService.pp)
         this.productService.DansPanier[this.productService.pp-1]=item
@@ -56,8 +59,31 @@ indiceProductInPanier:any
         this.productService.panier.next(++this.productService.pp)}
     }
    }
-   afficheDetail(item:any){
-     
+   calculNumberPages(){
+    let j =0
+    for (let i = 0; i < this.items.length; i+=3) {
+      this.pages[j]=this.items[i]
+      j++
+    }
+   }
+   desactivePagination(){
+     for (let i = 0; i < this.pages.length; i++) {
+      this.pages[i].status=false
+     }
+   }
 
+   pagination(num:any){
+     let debut
+     let fin
+     let j=0
+     debut=(num)*3
+     fin=debut+3
+     this.desactivePagination()
+     this.pages[num].status=true
+     for (let i = debut; i < fin; i++) {
+      //if(this.items[i]==undefined){break}
+      this.itemsPerPage[j]=this.items[i]       
+      j++
+     }
    }
 }

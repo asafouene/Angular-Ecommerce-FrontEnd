@@ -16,21 +16,64 @@ export class HeaderComponent implements OnInit {
   panier=0
   role=0
   fauser=faUser
+  alertMsg:any
+  alertAnimation=false
+  alertShow=false
+  panierAfter=1
 
-  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {}
 
-  ngOnInit(): void {    
+  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {
+    
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
+      if(this.isAuth===true){
+        this.alertMsg="Connexion avec succes"
+        this.alertShow=!this.alertShow
+        this.alertAnimation=!this.alertAnimation
+        setTimeout(() => {
+          this.alertAnimation=!this.alertAnimation
+        }, 5000);
+        setTimeout(() => {
+          this.alertShow=!this.alertShow
+        },6000);
+      }
     })
-
     this.productService.panier.subscribe((data)=>{
       this.panier=data
+      if(this.panierAfter==this.panier){
+        this.panierAfter++
+        this.alertMsg="Produit ajouter au panier avec succes"
+        this.alertShow=!this.alertShow
+        this.alertAnimation=!this.alertAnimation
+        setTimeout(() => {
+          this.alertAnimation=!this.alertAnimation
+        }, 5000);
+        setTimeout(() => {
+          this.alertShow=!this.alertShow
+        },6000);
+      }
+      
+      
     })
 
     this.AuthentificationService.role.subscribe((data)=>{
       this.role=data      
-    })
+    })    
+    
+  }
+
+  ngOnInit(): void {    
+    
+      
+      
+    
+      
+
+    
+
+    
+    
+ 
     
   }
 
@@ -39,5 +82,5 @@ export class HeaderComponent implements OnInit {
     this.productService.panier.next(0)
     this.router.navigateByUrl('/home')
   }
-  
+
 }

@@ -41,3 +41,10 @@
       </div>
     </div>
   </nav>
+
+  <div class="alert alert-success myalert" role="alert" [class.myalertfadein]="alertAnimation" [class.myalertfadeout]="!alertAnimation" *ngIf="alertShow">
+    {{alertMsg}}
+  </div>
+
+
+

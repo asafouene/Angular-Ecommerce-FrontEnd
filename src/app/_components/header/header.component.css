@@ -1,0 +1,38 @@
+.myalert{
+    width: auto;
+    float: right;
+    min-width: 25rem;
+}
+
+.myalertfadein{
+    
+    animation-duration: 1s;
+    animation-name: slidein;
+}
+@keyframes slidein {
+    from {
+        opacity: 0%;
+        margin-top: -5%;
+    }
+  
+    to {
+        opacity: 80%;
+        margin-top: 0%;
+    }
+  }
+
+.myalertfadeout{
+    animation-duration: 1s;
+    animation-name: slideout;
+}
+@keyframes slideout {
+    from {
+        opacity: 80%;
+        margin-top: 0%;
+    }
+  
+    to {
+        opacity: 0%;
+        margin-top: -5%;
+    }
+  }
