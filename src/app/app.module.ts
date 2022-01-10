@@ -14,6 +14,7 @@ import { PanierComponent } from './_components/panier/panier.component';
 import { GestionProduitComponent } from './_components/admin/gestion-produit/gestion-produit.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilComponent } from './_components/profil/profil.component';
+import { RegisterComponent } from './_components/register/register.component';
   
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ProfilComponent } from './_components/profil/profil.component';
     PanierComponent,
     GestionProduitComponent,
     ProfilComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

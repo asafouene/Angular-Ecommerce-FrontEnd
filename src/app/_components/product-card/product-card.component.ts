@@ -26,10 +26,7 @@ itemsPerPage:any[]=[]
 
     this.authentifacationService.autoriser.subscribe((data)=>{
         this.isAuth=data
-        })
-        console.log(this.productService.DansPanier);
-        
-
+        })        
  }
   ngOnInit(): void { 
     
@@ -83,7 +80,6 @@ itemsPerPage:any[]=[]
      this.desactivePagination()
      this.pages[num].status=true
      for (let i = debut; i < fin; i++) {
-      //if(this.items[i]==undefined){break}
       this.itemsPerPage[j]=this.items[i]       
       j++
      }

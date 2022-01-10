@@ -25,24 +25,13 @@ export class HeaderComponent implements OnInit {
   pAlertMsg:any
   pAlertAnimation=false
   pAlertShow=false
+  isRegistred:any
 
 
   constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService,private panierComonent:PanierComponent) {
     
-    this.AuthentificationService.autoriser.subscribe((data)=>{
-      this.isAuth=data
-      if(this.isAuth===true){
-        this.alertMsg="Connexion avec succes"
-        this.alertShow=!this.alertShow
-        this.alertAnimation=!this.alertAnimation
-        setTimeout(() => {
-          this.alertAnimation=!this.alertAnimation
-        }, 5000);
-        setTimeout(() => {
-          this.alertShow=!this.alertShow
-        },6000);
-      }
-    })
+    this.checkIsRegistred()
+    this.checkIsAuth()
     this.productService.panier.subscribe((data)=>{
       this.panier=data
       if(this.panierAfter==this.panier){
@@ -57,7 +46,6 @@ export class HeaderComponent implements OnInit {
           this.pAlertShow=!this.pAlertShow
         },3000);
       }
-      
     })
 
     this.AuthentificationService.role.subscribe((data)=>{
@@ -68,6 +56,41 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {    
  
+  }
+  checkIsAuth(){
+    this.AuthentificationService.autoriser.subscribe((data)=>{
+      this.isAuth=data
+      if(this.isAuth===true){
+        this.alertMsg="Connexion avec succes"
+        this.alertShow=!this.alertShow
+        this.alertAnimation=!this.alertAnimation
+        setTimeout(() => {
+          this.alertAnimation=!this.alertAnimation
+        }, 5000);
+        setTimeout(() => {
+          this.alertShow=!this.alertShow
+        },6000);
+      }
+    })
+
+  }
+  checkIsRegistred(){
+    this.isRegistred=false
+    this.AuthentificationService.oAccountCreated.subscribe((data)=>{
+      this.isRegistred=data
+      if(this.isRegistred===true){
+        this.alertMsg="Compte enregistrer avec succes"
+        this.alertShow=!this.alertShow
+        this.alertAnimation=!this.alertAnimation
+        setTimeout(() => {
+          this.alertAnimation=!this.alertAnimation
+        }, 5000);
+        setTimeout(() => {
+          this.alertShow=!this.alertShow
+        },6000);
+      }
+    })
+
   }
 
   deconnexion(){

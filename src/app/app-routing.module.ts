@@ -7,6 +7,7 @@ import { AuthGuard } from './auth.guard';
 import { PanierComponent } from './_components/panier/panier.component';
 import { GestionProduitComponent } from './_components/admin/gestion-produit/gestion-produit.component';
 import { ProfilComponent } from './_components/profil/profil.component';
+import { RegisterComponent } from './_components/register/register.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'product',component:ProductCardComponent,canActivate:[AuthGuard]},
   {path:'panier',component:PanierComponent,canActivate:[AuthGuard]},
   {path:'gestionproduit',component:GestionProduitComponent,canActivate:[AuthGuard]},
-  {path:'profil',component:ProfilComponent,canActivate:[AuthGuard]}
+  {path:'profil',component:ProfilComponent,canActivate:[AuthGuard]},
+  {path:'register',component:RegisterComponent}
 
 ];
 

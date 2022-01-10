@@ -1,0 +1,24 @@
+<div  style="max-width: 50%;margin-left: auto;margin-right: auto;margin-top: 5%;">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="mb-3" >
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" aria-describedby="nameHelp" #username="ngModel" ngModel name="username" required>
+          <label class="form-label">Email address</label>
+          <input type="email" class="form-control" aria-describedby="emailHelp" #email="ngModel" ngModel name="email" required>
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        <small *ngIf="email.touched&&email.invalid">email obligatoire</small>
+        
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" #pwd="ngModel" ngModel name="pwd" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Re-type Password</label>
+            <input type="password" class="form-control" #pwd="ngModel" ngModel name="rpwd" required>
+          </div>
+          <div *ngIf="msg" class="alert alert-danger"> {{msg}} </div>
+
+        <button class="btn btn-primary" [disabled]="f.invalid">Connect</button>
+      </form>
+    </div>
