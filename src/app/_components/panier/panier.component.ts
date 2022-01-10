@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 
 @Component({
@@ -6,9 +6,12 @@ import { ProductService } from 'src/app/_services/product.service';
   templateUrl: './panier.component.html',
   styleUrls: ['./panier.component.css']
 })
+@Injectable({
+  providedIn: 'root'
+})
+
 export class PanierComponent implements OnInit {
 itemsIN:any=[]
-panierProducts:any=[]
 somme=0
 
   constructor(private productService:ProductService) {
@@ -20,8 +23,6 @@ somme=0
     
   }
   ngOnInit(): void {
-    do {
-      
-    } while (this.itemsIN[0]===undefined); 
+
   }
 }

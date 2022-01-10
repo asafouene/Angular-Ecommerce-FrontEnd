@@ -1,33 +1,33 @@
 <nav aria-label="navigation" style="margin-top:10rem">
   <ul class="pagination justify-content-center" >
     <div class="container"> 
-<div class="row justify-content-md-center">
-  <div class="col-md-auto">
-    <div *ngFor="let page of pages,index as i" style="float: left;">
-      <li class="page-item" [class.active]="page.status">
-      <button class="page-link" (click)="pagination(i)">{{i+1}}</button>
-      </li>
+      <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+          <div *ngFor="let page of pages,index as i" style="float: left;">
+            <li class="page-item" [class.active]="page.status">
+            <button class="page-link" (click)="pagination(i)">{{i+1}}</button>
+            </li>
+          </div>
+        </div>
+          </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col" *ngFor="let item of itemsPerPage,index as i,count as c">
+          <div *ngIf="item">
+            <div  class="card" style="height: auto;" >
+            <img src={{item.img_src}} class="card-img-top" alt="..." style="height: 15rem;width: 15rem;margin-left: auto;margin-right: auto;">
+              <div class="card-body">
+                <h5 class="card-title">{{item.name}}</h5>
+                <p  class="card-text" class="collapse" [id]="'id'+i">{{item.desc}}</p>
+                <button style="float: right;" class="btn btn-light btn-sm" data-bs-toggle="collapse" [attr.href]="'#id'+i" role="button" aria-expanded="false">plus d'info</button>
+                <p class="fw-bold"> {{item.prix | prix}} </p>      
+                <button class="btn btn-primary" style="bottom: 0px;left: 15px;position:relative;" (click)="AddToCard(item)">Ajouter au panier</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-    </div>
-<div class="row" style="margin-top:5rem">
-<div class="col" *ngFor="let item of itemsPerPage,index as i,count as c">
-<div *ngIf="item">
-<div  class="card" style="height: auto;" >
-<img src={{item.img_src}} class="card-img-top" alt="..." style="height: 15rem;width: 15rem;margin-left: auto;margin-right: auto;">
-<div class="card-body">
-<h5 class="card-title">{{item.name}}</h5>
-<p  class="card-text" class="collapse" [id]="'id'+i">{{item.desc}}</p>
-<button style="float: right;" class="btn btn-light btn-sm" data-bs-toggle="collapse" [attr.href]="'#id'+i" role="button" aria-expanded="false">plus details</button>
-<p class="fw-bold"> {{item.prix | prix}} </p>      
-<button class="btn btn-primary" style="bottom: 25px;left: 15px;position:absolute;" (click)="AddToCard(item)">Ajouter au panier</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</ul>
+  </ul>
 </nav>
 
 

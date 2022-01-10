@@ -3,6 +3,7 @@ import { AuthentificationService } from 'src/app/_services/authentification.serv
 import { Router} from '@angular/router';
 import { ProductService } from 'src/app/_services/product.service';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { PanierComponent } from '../panier/panier.component';
 
 
 
@@ -11,6 +12,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
   isAuth:any
   panier=0
@@ -20,9 +22,12 @@ export class HeaderComponent implements OnInit {
   alertAnimation=false
   alertShow=false
   panierAfter=1
+  pAlertMsg:any
+  pAlertAnimation=false
+  pAlertShow=false
 
 
-  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {
+  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService,private panierComonent:PanierComponent) {
     
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
@@ -42,17 +47,16 @@ export class HeaderComponent implements OnInit {
       this.panier=data
       if(this.panierAfter==this.panier){
         this.panierAfter++
-        this.alertMsg="Produit ajouter au panier avec succes"
-        this.alertShow=!this.alertShow
-        this.alertAnimation=!this.alertAnimation
+        this.pAlertMsg="Produit ajouter au panier avec succes"
+        this.pAlertShow=!this.pAlertShow
+        this.pAlertAnimation=!this.pAlertAnimation
         setTimeout(() => {
-          this.alertAnimation=!this.alertAnimation
-        }, 5000);
+          this.pAlertAnimation=!this.pAlertAnimation
+        }, 2000);
         setTimeout(() => {
-          this.alertShow=!this.alertShow
-        },6000);
+          this.pAlertShow=!this.pAlertShow
+        },3000);
       }
-      
       
     })
 
@@ -63,24 +67,18 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {    
-    
-      
-      
-    
-      
-
-    
-
-    
-    
  
-    
   }
 
   deconnexion(){
     this.AuthentificationService.isAuth.next(false)
     this.productService.panier.next(0)
     this.router.navigateByUrl('/home')
+    this.productService.DansPanier=[]
+    this.productService.panier.next(0)
+    this.productService.pp=0
+    
+    
   }
 
 }

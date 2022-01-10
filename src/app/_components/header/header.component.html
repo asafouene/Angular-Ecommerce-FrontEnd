@@ -42,9 +42,24 @@
     </div>
   </nav>
 
+
   <div class="alert alert-success myalert" role="alert" [class.myalertfadein]="alertAnimation" [class.myalertfadeout]="!alertAnimation" *ngIf="alertShow">
     {{alertMsg}}
   </div>
 
+<div [class.myalertfadein]="pAlertAnimation" [class.myalertfadeout]="!pAlertAnimation" *ngIf="pAlertShow">
+  <div class="modal-dialog" style="z-index:1;">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <p>Produit ajouter avec succes </p>
+      </div>
+
+    </div>
+  </div>
+  <div class="modal-backdrop" style="opacity: 50%;z-index:0;">
+  </div>
+
+</div>
 
 

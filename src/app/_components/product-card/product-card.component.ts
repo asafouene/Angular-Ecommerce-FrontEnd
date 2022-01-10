@@ -27,6 +27,8 @@ itemsPerPage:any[]=[]
     this.authentifacationService.autoriser.subscribe((data)=>{
         this.isAuth=data
         })
+        console.log(this.productService.DansPanier);
+        
 
  }
   ngOnInit(): void { 
