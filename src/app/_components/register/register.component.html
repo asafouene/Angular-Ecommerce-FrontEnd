@@ -2,11 +2,10 @@
     <form #f="ngForm" (ngSubmit)="onSubmit(f)">
         <div class="mb-3" >
             <label class="form-label">Username</label>
-            <input type="text" class="form-control" aria-describedby="nameHelp" #username="ngModel" ngModel name="username" required>
-          <label class="form-label">Email address</label>
-          <input type="email" class="form-control" aria-describedby="emailHelp" #email="ngModel" ngModel name="email" required>
+            <input type="text" class="form-control" pattern="[a-z0-9._%+-]+" #username="ngModel" ngModel name="username" required>
+          <label class="form-label ">Email address</label>
+          <input type="email" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" aria-describedby="emailHelp" #email="ngModel" ngModel name="email" required >
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        <small *ngIf="email.touched&&email.invalid">email obligatoire</small>
         
         </div>
         <div class="mb-3">

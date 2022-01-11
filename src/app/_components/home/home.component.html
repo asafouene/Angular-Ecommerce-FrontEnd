@@ -1,13 +1,13 @@
 
-  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="height: 700px;width: 800px;margin-left: auto;margin-right: auto;">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" style="max-height: 80%;width: 800px;margin-left: auto;margin-right: auto;">
     <div class="carousel-inner">
       <div class="carousel-item active" data-bs-interval="10000">
-        <img [src]="firstItem.img_src" class="d-block w-100" alt="...">
+        <img [src]="firstItem.img_src" class="d-block w-100" alt="..." style="height: 50%;">
         <div class="carousel-caption d-none d-md-block">
         </div>
       </div>
       <div class="carousel-item" data-bs-interval="2000" *ngFor="let item of items.slice(1)">
-        <img src={{item.img_src}} class="d-block w-100" alt="...">
+        <img src={{item.img_src}} class="d-block" alt="..." style="height: 50%;">
         <div class="carousel-caption d-none d-md-block">
       </div>
       </div>

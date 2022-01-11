@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { AuthentificationService } from 'src/app/_services/authentification.service';
 
@@ -7,6 +7,9 @@ import { AuthentificationService } from 'src/app/_services/authentification.serv
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
+})
+@Injectable({
+  providedIn: 'root',
 })
 export class ProductCardComponent implements OnInit {
 items:any

@@ -11,6 +11,7 @@ export class ProductService implements OnInit {
   panier=new Subject<number>()
   jsonDataResult: any
   DansPanier:any=[]
+
   constructor(private http: HttpClient) {
   }
   OnGetProduct(){

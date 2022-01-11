@@ -13,14 +13,20 @@ import { AuthentificationService } from 'src/app/_services/authentification.serv
 export class RegisterComponent implements OnInit {
   users:any
   msg:any
-  userExiste=false
+  userExiste:boolean=false
+  verifEmail:any
+  inputEmail:any
 
-  constructor(private http:HttpClient,private router:Router,private authService:AuthentificationService) { }
+  constructor(private http:HttpClient,private router:Router,private authService:AuthentificationService) {
+    
+
+   }
 
   ngOnInit(): void {
     
 }
 onSubmit(f:NgForm){
+  this.userExiste=false
   console.log(f.value);
   let newUser={
     email:f.value.email,
@@ -28,7 +34,7 @@ onSubmit(f:NgForm){
     password:f.value.pwd,
     Role:0
   }
-  
+
   if(f.value.pwd==f.value.rpwd){
     this.authService.OnGetUser().then((data)=>{
       this.users=data}).then(()=>{
@@ -46,7 +52,6 @@ onSubmit(f:NgForm){
               this.router.navigateByUrl('/login')
             }})}
         })  
-    
   }
   else {this.msg="mot de passe pas identique"}
   

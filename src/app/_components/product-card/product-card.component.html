@@ -19,7 +19,7 @@
                 <h5 class="card-title">{{item.name}}</h5>
                 <p  class="card-text" class="collapse" [id]="'id'+i">{{item.desc}}</p>
                 <button style="float: right;" class="btn btn-light btn-sm" data-bs-toggle="collapse" [attr.href]="'#id'+i" role="button" aria-expanded="false">plus d'info</button>
-                <p class="fw-bold"> {{item.prix | prix}} </p>      
+                <p class="fw-bold" style="color: red;"> {{item.prix | prix}} </p>      
                 <button class="btn btn-primary" style="bottom: 0px;left: 15px;position:relative;" (click)="AddToCard(item)">Ajouter au panier</button>
               </div>
             </div>

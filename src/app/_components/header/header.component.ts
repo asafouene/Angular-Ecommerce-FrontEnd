@@ -3,7 +3,6 @@ import { AuthentificationService } from 'src/app/_services/authentification.serv
 import { Router} from '@angular/router';
 import { ProductService } from 'src/app/_services/product.service';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { PanierComponent } from '../panier/panier.component';
 
 
 
@@ -28,8 +27,7 @@ export class HeaderComponent implements OnInit {
   isRegistred:any
 
 
-  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService,private panierComonent:PanierComponent) {
-    
+  constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {  
     this.checkIsRegistred()
     this.checkIsAuth()
     this.productService.panier.subscribe((data)=>{
@@ -51,12 +49,11 @@ export class HeaderComponent implements OnInit {
     this.AuthentificationService.role.subscribe((data)=>{
       this.role=data      
     })    
-    
   }
 
   ngOnInit(): void {    
- 
   }
+
   checkIsAuth(){
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
@@ -72,8 +69,8 @@ export class HeaderComponent implements OnInit {
         },6000);
       }
     })
-
   }
+
   checkIsRegistred(){
     this.isRegistred=false
     this.AuthentificationService.oAccountCreated.subscribe((data)=>{
@@ -90,7 +87,6 @@ export class HeaderComponent implements OnInit {
         },6000);
       }
     })
-
   }
 
   deconnexion(){
@@ -100,8 +96,6 @@ export class HeaderComponent implements OnInit {
     this.productService.DansPanier=[]
     this.productService.panier.next(0)
     this.productService.pp=0
-    
-    
   }
 
 }

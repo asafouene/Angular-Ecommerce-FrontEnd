@@ -4,6 +4,7 @@ import { ProductService } from 'src/app/_services/product.service';
 import { faEdit,faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 import { Route, Router } from '@angular/router';
+import { ProductCardComponent } from '../../product-card/product-card.component';
 
 
 @Component({
@@ -19,7 +20,7 @@ export class GestionProduitComponent implements OnInit {
   faplus=faPlus
 
 
-  constructor(private productService:ProductService,private authentifacationService:AuthentificationService,private http:HttpClient,private router:Router) { 
+  constructor(private productService:ProductService,private authentifacationService:AuthentificationService,private http:HttpClient,private router:Router,private productComponent:ProductCardComponent) { 
     this.productService.OnGetProduct().then((data)=>{
       this.items=data}) 
   }
@@ -49,8 +50,11 @@ export class GestionProduitComponent implements OnInit {
   }
   
   onAdd(f:any){
-    this.http.post("http://localhost:3000/items",f).subscribe()
-    this.router.navigateByUrl('/product')
+    this.http.post("http://localhost:3000/items",f).subscribe({complete:()=>{
+      this.router.navigateByUrl('/product')
+      this.productComponent.pages[this.productComponent.pages.length-1].status=true
+    }})           
+    
   }
 
 }
