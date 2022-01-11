@@ -1,0 +1,97 @@
+<table class="table table-bordered" style="margin-top:10rem;max-width: 80rem;margin-left: auto;margin-right: auto;">
+    <thead>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Role</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><img [(src)]="user.url_img" alt="" style="width: 7rem;height: 6rem;"></td>
+        <td>{{ user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+        <td style="text-align: center;vertical-align: middle;width: 9rem;"> <button (click)="onEdit(user)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal"> <fa-icon [icon]="faedit"></fa-icon> </button> <button (click)="onDelate(user.id)" class="btn btn-outline-danger"> <fa-icon [icon]="fatrash"></fa-icon> </button>
+        </td>
+      </tr>
+    </tbody>
+  
+  <div style="margin-right: auto;margin-left: auto;">
+  <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#ajoutModal">ajout d'un produit <fa-icon [icon]="faplus"></fa-icon></button></div>
+</table>
+
+
+  <!-- Modal edit -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true" style="margin-top: 10rem;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">{{ userEdit.name }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form class="modal-body" #fEdit="ngForm">
+            <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="nom">Nom : </span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm" [(ngModel)]="userEdit.username" #name="ngModel" name="name">
+              </div>
+              <div class="input-group input-group-sm mb-3">
+                <span class="input-group-text" id="image">Image : </span>
+                <input type="text" class="form-control" aria-label="Sizing example input" 
+                aria-describedby="inputGroup-sizing-sm" [(ngModel)]="userEdit.url_img" #img_src="ngModel" name="img_src">
+              </div>
+              <div class="input-group">
+                <span class="input-group-text" id="desc">Description :</span>
+                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="userEdit.email" #desc="ngModel" name="desc"></textarea>
+              </div>
+        
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSave(userEdit.id,fEdit.value)">Save changes</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Modal Ajout -->
+<div class="modal fade" id="ajoutModal" tabindex="-1" aria-labelledby="ajoutModalLabel" aria-hidden="true" style="margin-top: 10rem;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">{{ userEdit.name }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="modal-body" #fAdd="ngForm">
+              <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text" id="nom">Nom : </span>
+                  <input type="text" class="form-control" aria-label="Sizing example input"
+                   aria-describedby="inputGroup-sizing-sm" #name="ngModel" ngModel name="name">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text" id="prix" ngModel>Prix : </span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" 
+                  aria-describedby="inputGroup-sizing-sm" #prix="ngModel" ngModel name="prix">
+                </div>
+                <div class="input-group input-group-sm mb-3">
+                  <span class="input-group-text" id="image">Image : </span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" 
+                  aria-describedby="inputGroup-sizing-sm" #img_src="ngModel" ngModel name="img_src">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-text" id="desc">Description :</span>
+                  <textarea class="form-control" aria-label="With textarea" #desc="ngModel" ngModel name="desc"></textarea>
+                </div>
+          
+          <div class="modal-footer">
+            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onAdd(fAdd.value)">Save changes</button>
+          </div>
+      </form>
+        </div>
+      </div>
+  </div>

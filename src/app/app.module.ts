@@ -15,6 +15,7 @@ import { GestionProduitComponent } from './_components/admin/gestion-produit/ges
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProfilComponent } from './_components/profil/profil.component';
 import { RegisterComponent } from './_components/register/register.component';
+import { GestionUsersComponent } from './_components/admin/gestion-users/gestion-users.component';
   
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { RegisterComponent } from './_components/register/register.component';
     GestionProduitComponent,
     ProfilComponent,
     RegisterComponent,
+    GestionUsersComponent,
   ],
   imports: [
     BrowserModule,

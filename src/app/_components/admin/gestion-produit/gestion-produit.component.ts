@@ -3,7 +3,7 @@ import { AuthentificationService } from 'src/app/_services/authentification.serv
 import { ProductService } from 'src/app/_services/product.service';
 import { faEdit,faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { ProductCardComponent } from '../../product-card/product-card.component';
 
 
