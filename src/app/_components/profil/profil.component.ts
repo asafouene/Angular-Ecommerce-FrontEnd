@@ -17,7 +17,6 @@ export class ProfilComponent implements OnInit {
       for (let i = 0; i < this.users.length; i++) {        
         if(this.users[i].id==this.authService.idAuth){
           this.myProfil=this.users[i]
-          
           break
         }
       }
