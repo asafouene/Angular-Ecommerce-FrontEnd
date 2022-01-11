@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from 'src/app/_services/authentification.service';
 import { faEdit,faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -19,7 +20,7 @@ export class GestionUsersComponent implements OnInit {
   loadPage=false
   roles:any=["Client","Administrateur","Commercial","Comptable"]
 
-  constructor(private authService:AuthentificationService) { 
+  constructor(private authService:AuthentificationService,private http:HttpClient) { 
     this.authService.OnGetUser().then((data)=>{
       this.users=data
     }).then(()=>{
@@ -38,12 +39,17 @@ export class GestionUsersComponent implements OnInit {
   }
   onEdit(user:any){
     this.userEdit=user
+    
 
   }
   onDelate(id:any){
 
   }
   onSave(id:any,f:any){
+    this.http.put("http://localhost:3000/users"+id,f).subscribe(()=>{
+      this.loadPage=false
+    }).closed
+    if(closed)this.loadPage=true
 
   }
   onAdd(f:any){

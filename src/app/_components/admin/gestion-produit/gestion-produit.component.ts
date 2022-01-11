@@ -55,10 +55,14 @@ export class GestionProduitComponent implements OnInit {
   
   onAdd(f:any){
     this.http.post("http://localhost:3000/items",f).subscribe({complete:()=>{
+      this.loadPage=true
       this.router.navigateByUrl('/product')
-      this.productComponent.pages[this.productComponent.pages.length-1].status=true
-    }})           
-    
+    }}).closed
+
+    if(closed){
+      this.loadPage=false
+    }
+      
   }
   onCancel(f:NgForm){
     this.itemEdit=[]
