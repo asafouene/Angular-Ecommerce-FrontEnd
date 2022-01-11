@@ -5,6 +5,7 @@
       "email": "safwen@outlook.tn",
       "username": "safwen",
       "password": "1234",
+      "url_img":"https://img-19.ccm2.net/WNCe54PoGxObY8PCXUxMGQ0Gwss=/480x270/smart/d8c10e7fd21a485c909a5b4c5d99e611/ccmcms-commentcamarche/20456790.jpg",
       "Role": 0
     },
     {
@@ -13,33 +14,6 @@
       "username": "admin",
       "password": "1234",
       "Role": 1
-    },
-    {
-      "email": "sa@outlook.tn",
-      "username": "admin@outlook.tn",
-      "password": "1234",
-      "Role": 0,
-      "id": 3
-    },
-    {
-      "email": "qsdqs",
-      "username": "admin@outlook.tn",
-      "password": "1234",
-      "Role": 0,
-      "id": 4
-    },
-    {
-      "email": "qsdqsd",
-      "username": "admin@outlook.tn",
-      "password": "1234",
-      "Role": 0,
-      "id": 5
-    },
-    {
-      "email": "qsd",
-      "username": "admin@outlook.tn",
-      "Role": 0,
-      "id": 6
     }
   ],
   "api": [

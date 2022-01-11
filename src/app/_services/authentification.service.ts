@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class AuthentificationService {
 
-  nameAuth=new Subject()
+  idAuth:any=""
   role=new Subject<number>()
   isAuth=new Subject()
   autoriser=this.isAuth.asObservable()
@@ -34,9 +34,6 @@ export class AuthentificationService {
       result(res)
     })
     })    
-  }
-  setName(nameAth:string){
-    this.nameAuth.next(nameAth)
   }
   ngOnInit(): void {
   }
