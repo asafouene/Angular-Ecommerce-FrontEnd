@@ -23,6 +23,8 @@ export class ProfilComponent implements OnInit {
       }).finally(()=>{
       if(this.myProfil.url_img==undefined)this.myProfil.url_img="https://www.seekpng.com/png/detail/413-4139803_unknown-profile-profile-picture-unknown.png"    
       console.log(this.myProfil.url_img)
+      console.log("test");
+      
       
     })
     
