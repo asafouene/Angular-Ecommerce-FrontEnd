@@ -5,7 +5,7 @@
       "email": "safwen@outlook.tn",
       "username": "safwen",
       "password": "1234",
-      "url_img":"https://img-19.ccm2.net/WNCe54PoGxObY8PCXUxMGQ0Gwss=/480x270/smart/d8c10e7fd21a485c909a5b4c5d99e611/ccmcms-commentcamarche/20456790.jpg",
+      "url_img": "https://img-19.ccm2.net/WNCe54PoGxObY8PCXUxMGQ0Gwss=/480x270/smart/d8c10e7fd21a485c909a5b4c5d99e611/ccmcms-commentcamarche/20456790.jpg",
       "Role": 0
     },
     {
@@ -27,55 +27,55 @@
     {
       "id": "2Wp_nd6",
       "name": "ASUS EXPERTBOOK B9",
-      "prix": "5149",
+      "prix": 5149.999,
       "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/b/9/b9400cea-kc0452r--6.jpg",
       "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache"
     },
     {
       "id": "L6tupyR",
       "name": "Apple MacBook Pro 13,3",
-      "prix": "4489",
+      "prix": 4489,
       "img_src": "https://www.zoom.com.tn/42021-thickbox_default/apple-macbook-pro-133-retina-apple-m1-256go-ssd-8go-touch-bar-mac-os-big-sur-myd82fna.jpg",
       "desc": "Processeur : Apple M1 Puce Apple M1 (CPU 8 coeurs / GPU 8 coeurs / Neural Engine 16 coeurs) ) / Mémoire : 8Go (DDR4 3733 MHz )/Disque dur : 256Go SSD  / Écran Rétina 13.3\" LED  / Caméra FaceTime HD / Wi-Fi / Bluetooth / macOS Big Sur"
     },
     {
       "id": "90hNQkw",
       "name": "Apple iMac 24'' Retina 4.5K",
-      "prix": "4999",
+      "prix": 4999,
       "img_src": "https://www.zoom.com.tn/43717-thickbox_default/apple-imac-24-retina-45k-puce-m1-8go-256go-ssd-silver.jpg",
       "desc": "Puce Apple M1 (CPU 8 cœurs avec 4 cœurs de performance et 4 cœurs à haute efficacité énergétique - GPU7 cœurs -Neural Engine 16 cœurs) / Mémoire : 8 Go de mémoire unifiée / Disque dur : 256 Go SSD/ Écran Retina 4,5K de 24 pouces  ( 4 480 x 2 520 pixels ) / Caméra FaceTime HD 1080p  / Wi-Fi / Bluetooth / Connexions et extension :Deux ports Thunderbolt/USB 4 avec prise en charge de : DisplayPort - Thunderbolt 3  - USB 4 -USB 3.1 Gen 2- Prise casque 3,5 mm/ macOS Big Sur/ Garantie 1an"
     },
     {
       "name": "ASUS ZENBOOK FLIP UX363EA",
-      "prix": "1400",
+      "prix": 1400,
       "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/s/a/sans-titre-1_626.jpg",
       "desc": "Ecran 13.3'' FULL HD Tactile - Processeur: Intel® Core™ I5-1135G7 (4.2 GHz, 8Mo Mémoire cache, Quad-Core) - Systéme d'exploitation: FreeDos - Mémoire RAM: 8 Go - Disque Dur: 512 Go SSD - Carte Graphique: Intel HD Graphics - avec wifi - Bluetooth - Couleur: Gris - Garantie: 1 an",
       "id": "_stZYuG"
     },
     {
       "name": "iPhone 13 Pro Max 512GB Gold",
-      "prix": "6449",
+      "prix": 6449,
       "img_src": "https://www.zoom.com.tn/46182-thickbox_default/iphone-13-pro-max-512gb-gold-mllh3aaa.jpg",
       "desc": "Écran Super Retina XDR 6,7 pouces avec ProMotion pour plus de rapidité et de réactivité - Mode Cinématique, qui réduit la profondeur de champ et change automatiquement la mise au point dans vos vidéos - Système photo pro avec nouveaux téléobjectif, grand‐angle et ultra grand‐angle 12 Mpx, scanner LiDAR, zoom optique 6x,  et enregistrement vidéo 4K HDR en Dolby Vision - Caméra avant TrueDepth 12 Mpx avec mode Nuit et enregistrement vidéo 4K HDR en Dolby Vision\nPuce A15 Bionic pour des performances fulgurantes - Jusqu’à 28 h de lecture vidéo, Design résistant avec Ceramic Shield - iOS 15",
       "id": "z7o5PT4"
     },
     {
       "name": "MSI MPG Trident A11SH",
-      "prix": "4329",
+      "prix": 4329,
       "img_src": "https://www.zoom.com.tn/46015-thickbox_default/pc-de-bureau-gamer-msi-mpg-trident-a10-i5-11e-gen-16go-512go-ssd-gtx4go-noir.jpg",
       "desc": "Processeur: Intel Core i5-11400F, up to 4,3 Ghz, 12Mo de cache / Mémoire: 16 Go DDR4 / Disque dur: 512 Go SSD NVMe (Emplacement 2 Disque 2.5'') / Carte graphique: Nvidia Geforce® GTX 1660-6Go-GDDR6 / WiFi / Bluetooth / USB 2.0 / USB 3.0  / USB 3.1 (Type-C) / HDMI / Ethernet / DisplayPort / Windows 10 / Garantie 2 ans - \"Pack : Clavier VIGOR GK30 GAMING + Souris Clutch GM11 offert \"",
       "id": "lUdKF7p"
     },
     {
       "name": "Xiaomi 11T 8Go/256 Go",
-      "prix": "1659",
+      "prix": 1659,
       "img_src": "https://www.zoom.com.tn/45790-thickbox_default/smartphone-xiaomi-11t-8go256-go-double-sim-blanc.jpg",
       "desc": "Processeur: MediaTek Dimensity 1200-Ultra ARM Mali GPU, up to 886MHz / RAM: 8 Go / Capacité : 256 Go / Ecran 6.67 pouces FHD+ AMOLED / Résolution: 1080x2400px / appareils photo: 108 MP + 8 MP + 5 MP Flash LED et Frontale 16 MP / Batterie 5000 mAh / Wi-Fi / Bluetooth / GPS / 5G / Android 11 / Dual SIM / Garantie 1 an",
       "id": "QWsOw-P"
     },
     {
       "name": "JBL Barre de son 9.1 sans fil Bluetooth",
-      "prix": "4669",
+      "prix": 4669,
       "img_src": "https://www.zoom.com.tn/38563-thickbox_default/jbl-barre-de-son-91-sans-fil-bluetooth-noir.jpg",
       "desc": "Barre de son JBL 9.1 / Système audio 5.1.4 canaux / Puissance de sortie totale des enceintes: 820W / Puissance de sortie de la barre de son: 400W /Puissance de sortie des enceintes surround: 2 x 60 W  / Haut-parleurs de la barre de son : 4 haut-parleurs racetrack + 2 / Température de fonctionnement: 0°C - 45°C /Consommation en veille en réseau (barre de son) < 6.0 W / fréquence Audio : 34 Hz - 20 KHz / Entrée vidéo HDMI / Entrées audio: 1 optique, Bluetooth, Chromecast, AirPlay2, USB/ Bluetooth / Wifi / Temps de charge de la batterie  3 Heures / Garantie 1 an",
       "id": "L9vdquz"

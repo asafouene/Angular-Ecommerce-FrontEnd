@@ -1,4 +1,11 @@
-<table class="table table-bordered" style="margin-top:10rem;max-width: 80rem;margin-left: auto;margin-right: auto;">
+<div *ngIf="!loadPage"class="spinner-grow" style="margin-top:20rem;margin-left: 48%;margin-right: 48%; width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<div *ngIf="loadPage">
+<table class="table table-bordered" style="margin-top:7rem;max-width: 80rem;margin-left: auto;margin-right: auto;">
+<div *ngIf="loadPage">
+  <table class="table table-bordered" style="margin-top:10rem;max-width: 80rem;margin-left: auto;margin-right: auto;">
     <thead>
       <tr>
         <th scope="col">Image</th>
@@ -63,35 +70,43 @@
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editModalLabel">{{ userEdit.name }}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="editModalLabel">Ajout untilisateur </h5>
           </div>
           <form class="modal-body" #fAdd="ngForm">
               <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="nom">Nom : </span>
+                  <span class="input-group-text" id="nom" [class.text-danger]="username.invalid&&username.touched" [class.text-success]="username.valid&&username.touched" >Nom : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input"
-                   aria-describedby="inputGroup-sizing-sm" #name="ngModel" ngModel name="name">
+                   aria-describedby="inputGroup-sizing-sm" #username="ngModel" ngModel name="username"  [class.is-valid]="username.valid&&username.touched" [class.is-invalid]="username.invalid&&username.touched" required>
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="prix" ngModel>Prix : </span>
+                  <span class="input-group-text" id="email" ngModel [class.text-danger]="email.invalid&&email.touched" [class.text-success]="email.valid&&email.touched">Email : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input" 
-                  aria-describedby="inputGroup-sizing-sm" #prix="ngModel" ngModel name="prix">
+                  aria-describedby="inputGroup-sizing-sm" #email="ngModel" [class.is-valid]="email.valid&&email.touched" [class.is-invalid]="email.invalid&&email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ngModel name="email" required>
                 </div>
-                <div class="input-group input-group-sm mb-3">
+                <div class="input-group input-group-sm mb-3" [class.text-danger]="url_img.invalid&&url_img.touched" [class.text-success]="url_img.valid&&url_img.touched">
                   <span class="input-group-text" id="image">Image : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input" 
-                  aria-describedby="inputGroup-sizing-sm" #img_src="ngModel" ngModel name="img_src">
+                  aria-describedby="inputGroup-sizing-sm" #url_img="ngModel" ngModel name="url_img">
                 </div>
+
                 <div class="input-group">
-                  <span class="input-group-text" id="desc">Description :</span>
-                  <textarea class="form-control" aria-label="With textarea" #desc="ngModel" ngModel name="desc"></textarea>
-                </div>
-          
+                  <span class="input-group-text" id="role" [class.text-danger]="role.invalid&&role.touched" [class.text-success]="role.valid&&role.touched">Role :</span>
+                  <select class="form-select" aria-label="Default select" #role="ngModel" ngModel name="role" required [class.is-valid]="role.valid&&role.touched" [class.is-invalid]="role.invalid&&role.touched">
+                    <option value="0">Client</option>
+                    <option value="1">Administrateur</option>
+                    <option value="2">Moderateur</option>
+                    <option value="3">Commercial</option>
+                    <option value="4">Comptable</option>
+                  </select>
+              </div>
+
           <div class="modal-footer">
-            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onAdd(fAdd.value)">Save changes</button>
+            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onCancel(fAdd)">Cancel</button>
+            <button type="submit" [disabled]="fAdd.invalid" class="btn btn-primary" data-bs-dismiss="modal" (click)="onAdd(fAdd.value)">Ajout</button>
           </div>
       </form>
         </div>
       </div>
   </div>
+
+</div>

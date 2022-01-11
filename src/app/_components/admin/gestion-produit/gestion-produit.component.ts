@@ -5,6 +5,7 @@ import { faEdit,faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductCardComponent } from '../../product-card/product-card.component';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -18,14 +19,17 @@ export class GestionProduitComponent implements OnInit {
   faedit = faEdit
   fatrash=faTrash
   faplus=faPlus
+  loadPage=false
 
 
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService,private http:HttpClient,private router:Router,private productComponent:ProductCardComponent) { 
     this.productService.OnGetProduct().then((data)=>{
-      this.items=data}) 
+      this.items=data}).then(()=>{this.loadPage=true})
   }
 
   ngOnInit(): void {
+    
+
   }
   OnDelate(id:any){
     this.http.delete("http://localhost:3000/items/"+id).subscribe(()=>{
@@ -54,6 +58,10 @@ export class GestionProduitComponent implements OnInit {
       this.router.navigateByUrl('/product')
       this.productComponent.pages[this.productComponent.pages.length-1].status=true
     }})           
+    
+  }
+  onCancel(f:NgForm){
+    this.itemEdit=[]
     
   }
 

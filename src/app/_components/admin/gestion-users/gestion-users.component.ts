@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from 'src/app/_services/authentification.service';
 import { faEdit,faTrash,faPlus } from '@fortawesome/free-solid-svg-icons';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -14,6 +16,8 @@ export class GestionUsersComponent implements OnInit {
   faedit = faEdit
   fatrash=faTrash
   faplus=faPlus
+  loadPage=false
+  roles:any=["Client","Administrateur","Commercial","Comptable"]
 
   constructor(private authService:AuthentificationService) { 
     this.authService.OnGetUser().then((data)=>{
@@ -22,13 +26,11 @@ export class GestionUsersComponent implements OnInit {
       for (let i = 0; i < this.users.length; i++) {
         if(this.users[i].Role==1)this.users[i].role="Administrateur"
         else if (this.users[i].Role==0)this.users[i].role="Client"
-
         if(this.users[i].url_img==undefined){
           this.users[i].url_img="https://www.seekpng.com/png/detail/413-4139803_unknown-profile-profile-picture-unknown.png"
         }
-
       }
-    })
+    }).then(()=>{this.loadPage=true})
     
   }
 
@@ -45,7 +47,11 @@ export class GestionUsersComponent implements OnInit {
 
   }
   onAdd(f:any){
-
+    console.log(f);
+    
+  }
+  onCancel(f:NgForm){
+    f.reset()
   }
 
 }

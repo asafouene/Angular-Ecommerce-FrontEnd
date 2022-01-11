@@ -1,3 +1,7 @@
+<div *ngIf="!loadPage"class="spinner-grow" style="margin-top:20rem;margin-left: 48%;margin-right: 48%; width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div *ngIf="loadPage">
 <table class="table table-bordered" style="margin-top:10rem;max-width: 80rem;margin-left: auto;margin-right: auto;">
     <thead>
       <tr>
@@ -29,32 +33,32 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">{{ itemEdit.name }}</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="modal-title" id="editModalLabel">Editer produit</h5>
+          <button (click)="onCancel(fEdit)" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form class="modal-body" #fEdit="ngForm">
             <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="nom">Nom : </span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
-                 aria-describedby="inputGroup-sizing-sm" [(ngModel)]="itemEdit.name" #name="ngModel" name="name">
+                 aria-describedby="inputGroup-sizing-sm" ngModel={{itemEdit.name}} #name="ngModel" name="name">
               </div>
               <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="prix" ngModel>Prix : </span>
                 <input type="text" class="form-control" aria-label="Sizing example input" 
-                aria-describedby="inputGroup-sizing-sm" [(ngModel)]="itemEdit.prix" #prix="ngModel" name="prix">
+                aria-describedby="inputGroup-sizing-sm" ngModel={{itemEdit.prix}} #prix="ngModel" name="prix">
               </div>
               <div class="input-group input-group-sm mb-3">
                 <span class="input-group-text" id="image">Image : </span>
                 <input type="text" class="form-control" aria-label="Sizing example input" 
-                aria-describedby="inputGroup-sizing-sm" [(ngModel)]="itemEdit.img_src" #img_src="ngModel" name="img_src">
+                aria-describedby="inputGroup-sizing-sm" ngModel={{itemEdit.img_src}} #img_src="ngModel" name="img_src">
               </div>
               <div class="input-group">
                 <span class="input-group-text" id="desc">Description :</span>
-                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="itemEdit.desc" #desc="ngModel" name="desc"></textarea>
+                <textarea class="form-control" aria-label="With textarea" ngModel={{itemEdit.desc}} #desc="ngModel" name="desc"></textarea>
               </div>
         
         <div class="modal-footer">
-          <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onCancel(fEdit)">Close</button>
           <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onSave(itemEdit.id,fEdit.value)">Save changes</button>
         </div>
     </form>
@@ -93,10 +97,12 @@
                 </div>
           
           <div class="modal-footer">
-            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
             <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onAdd(fAdd.value)">Save changes</button>
           </div>
       </form>
         </div>
       </div>
   </div>
+
+</div>

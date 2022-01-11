@@ -5,25 +5,30 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PrixPipe implements PipeTransform {
 
-  transform(value: number): string {
-      let result = '';
-      if (value !== null && value !== undefined && !isNaN(value)) {
-         if (typeof(value) === 'string') {
-            value = parseFloat(value);
-         }
-         const parts = value.toString().split(',');
-         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-         if(value.toString().indexOf(',')===-1){
-          result=parts.join(',') + ',000 TND';
-         }
-         else{
-          result=parts.join(',') + ' TND';
-         }
-         
-      } else {
-         result='0,000 TND';
-      }
-      return result;
-   }
+  transform(value: number): string {  
+   let a=value.toString()
+   let first,middle,last
+     
+     if(a.indexOf('.')==-1){
+        first=a.substring(0,a.length-3)
+        last="000"
+        middle=a.substring(first.length,a.length)
+     }
+     else{
+       first=a.substring(0,a.indexOf('.')-3)
+       last=a.substring(a.indexOf('.')+1,a.length)
+      if(last.length==2)last=last+"0"
+      else if(last.length==1)last=last+"00"
+      else last=last
+         middle=a.substring(first.length,a.indexOf('.'))
+     }
 
+
+
+     return first+" "+middle+","+last+" TND"
+   
+
+   }
 }
+
+
