@@ -49,8 +49,11 @@
   </nav>
 
 
-  <div class="alert alert-success myalert" role="alert" [class.myalertfadein]="alertAnimation" [class.myalertfadeout]="!alertAnimation" *ngIf="alertShow">
-    {{alertMsg}}
+  <div class="alert alert-warning myalert" role="alert" [class.myalertfadein]="alertAnimation" [class.myalertfadeout]="!alertAnimation" *ngIf="alertShow">
+    {{msg}}
+  </div>
+  <div class="alert alert-success myalert" role="alert" [class.myalertfadein]="successAnimation" [class.myalertfadeout]="!successAnimation" *ngIf="successShow">
+    {{msg}}
   </div>
 
 <div [class.myalertfadein]="pAlertAnimation" [class.myalertfadeout]="!pAlertAnimation" *ngIf="pAlertShow">

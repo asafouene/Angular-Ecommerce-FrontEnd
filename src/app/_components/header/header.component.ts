@@ -17,9 +17,11 @@ export class HeaderComponent implements OnInit {
   panier=0
   role=0
   fauser=faUser
-  alertMsg:any
-  alertAnimation=false
-  alertShow=false
+  alertAnimation:any=false
+  alertShow:any=false
+  msg:any
+  successAnimation:any=false
+  successShow:any=false
   panierAfter=1
   pAlertMsg:any
   pAlertAnimation=false
@@ -58,15 +60,7 @@ export class HeaderComponent implements OnInit {
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
       if(this.isAuth===true){
-        this.alertMsg="Connexion avec succes"
-        this.alertShow=!this.alertShow
-        this.alertAnimation=!this.alertAnimation
-        setTimeout(() => {
-          this.alertAnimation=!this.alertAnimation
-        }, 5000);
-        setTimeout(() => {
-          this.alertShow=!this.alertShow
-        },6000);
+        this.onSuccessMsg("Connexion avec succes")
       }
     })
   }
@@ -76,15 +70,7 @@ export class HeaderComponent implements OnInit {
     this.AuthentificationService.oAccountCreated.subscribe((data)=>{
       this.isRegistred=data
       if(this.isRegistred===true){
-        this.alertMsg="Compte enregistrer avec succes"
-        this.alertShow=!this.alertShow
-        this.alertAnimation=!this.alertAnimation
-        setTimeout(() => {
-          this.alertAnimation=!this.alertAnimation
-        }, 5000);
-        setTimeout(() => {
-          this.alertShow=!this.alertShow
-        },6000);
+        this.onSuccessMsg("Compte enregistrer avec succes")
       }
     })
   }
@@ -96,6 +82,29 @@ export class HeaderComponent implements OnInit {
     this.productService.DansPanier=[]
     this.productService.panier.next(0)
     this.productService.pp=0
+  }
+
+  onAlertMsg(msg:string){
+          this.msg=msg
+          this.alertShow=!this.alertShow
+          this.alertAnimation=!this.alertAnimation
+          setTimeout(() => {
+            this.alertAnimation=!this.alertAnimation
+          }, 5000);
+          setTimeout(() => {
+            this.alertShow=!this.alertShow
+          },6000);
+  }
+  onSuccessMsg(msg:string){
+          this.msg=msg
+          this.successShow=!this.successShow
+          this.successAnimation=!this.successAnimation
+          setTimeout(() => {
+            this.successAnimation=!this.successAnimation
+          }, 5000);
+          setTimeout(() => {
+            this.successShow=!this.successShow
+          },6000);
   }
 
 }

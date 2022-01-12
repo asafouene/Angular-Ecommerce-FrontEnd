@@ -23,18 +23,21 @@ export class GestionProduitComponent implements OnInit {
 
 
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService,private http:HttpClient,private router:Router,private productComponent:ProductCardComponent) { 
-    this.productService.OnGetProduct().then((data)=>{
-      this.items=data}).then(()=>{this.loadPage=true})
+    this.OnLoadData()
   }
 
   ngOnInit(): void {
     
 
   }
+  OnLoadData(){
+    this.productService.OnGetProduct().then((data)=>{
+      this.items=data}).then(()=>{this.loadPage=true})
+  }
+  
   OnDelate(id:any){
     this.http.delete("http://localhost:3000/items/"+id).subscribe(()=>{
-      this.productService.OnGetProduct().then((data)=>{
-        this.items=data}) 
+      this.OnLoadData() 
     })
   }
 
@@ -50,23 +53,23 @@ export class GestionProduitComponent implements OnInit {
       img_src:f.img_src,
       desc:f.desc
     }
-    this.http.put("http://localhost:3000/items/"+id ,edititem).subscribe()
+    this.http.put("http://localhost:3000/items/"+id ,edititem).subscribe(()=>{
+      this.OnLoadData()
+    })
   }
   
   onAdd(f:any){
     this.http.post("http://localhost:3000/items",f).subscribe({complete:()=>{
-      this.loadPage=true
-      this.router.navigateByUrl('/product')
+      this.OnLoadData()
     }}).closed
 
     if(closed){
-      this.loadPage=false
-    }
-      
+      this.loadPage=true
+    }    
   }
+
   onCancel(f:NgForm){
     this.itemEdit=[]
-    
   }
 
 }
