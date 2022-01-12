@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from 'src/app/_services/authentification.service';
+import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profil',
@@ -10,7 +12,7 @@ export class ProfilComponent implements OnInit {
   users:any
   myProfil:any
 
-  constructor(private authService:AuthentificationService) {
+  constructor(private authService:AuthentificationService,private http:HttpClient) {
     this.authService.OnGetUser().then((data)=>{
       this.users=data      
     }).then(()=>{
@@ -22,15 +24,22 @@ export class ProfilComponent implements OnInit {
       }
       }).finally(()=>{
       if(this.myProfil.url_img==undefined)this.myProfil.url_img="https://www.seekpng.com/png/detail/413-4139803_unknown-profile-profile-picture-unknown.png"    
-      console.log(this.myProfil.url_img)
-      console.log("test");
-      
-      
     })
-    
    }
 
   ngOnInit(): void {
+  }
+  onChange(f:NgForm){
+    
+    if(this.myProfil.password==f.value.opwd&&f.value.npwd==f.value.rnpwd){
+      this.http.patch("http://localhost:3000/users/"+this.myProfil.id,{password:f.value.npwd}).subscribe()
+    }
+    else console.log("Erreur");
+    
+
+  }
+  onCancel(f:NgForm){
+    f.reset
   }
 
 }
