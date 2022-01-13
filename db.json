@@ -6,7 +6,7 @@
       "username": "safwen",
       "password": "1234",
       "url_img": "https://img-19.ccm2.net/WNCe54PoGxObY8PCXUxMGQ0Gwss=/480x270/smart/d8c10e7fd21a485c909a5b4c5d99e611/ccmcms-commentcamarche/20456790.jpg",
-      "Role": 0
+      "role": 0
     },
     {
       "id": 2,
@@ -14,7 +14,15 @@
       "username": "admin",
       "password": "1234AZ",
       "url_img": "",
-      "Role": 1
+      "role": 1
+    },
+    {
+      "username": "Youssuf",
+      "email": "youssuf@outlook.com",
+      "password": "1234AZ",
+      "url_img": "",
+      "role": "2",
+      "id": 3
     }
   ],
   "api": [
@@ -80,13 +88,6 @@
       "img_src": "https://www.zoom.com.tn/38563-thickbox_default/jbl-barre-de-son-91-sans-fil-bluetooth-noir.jpg",
       "desc": "Barre de son JBL 9.1 / Système audio 5.1.4 canaux / Puissance de sortie totale des enceintes: 820W / Puissance de sortie de la barre de son: 400W /Puissance de sortie des enceintes surround: 2 x 60 W  / Haut-parleurs de la barre de son : 4 haut-parleurs racetrack + 2 / Température de fonctionnement: 0°C - 45°C /Consommation en veille en réseau (barre de son) < 6.0 W / fréquence Audio : 34 Hz - 20 KHz / Entrée vidéo HDMI / Entrées audio: 1 optique, Bluetooth, Chromecast, AirPlay2, USB/ Bluetooth / Wifi / Temps de charge de la batterie  3 Heures / Garantie 1 an",
       "id": "L9vdquz"
-    },
-    {
-      "name": "test",
-      "prix": "2300",
-      "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/b/9/b9400cea-kc0452r--6.jpg",
-      "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cacheÉcran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cacheÉcran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache",
-      "id": "FyvbYtX"
     }
   ]
 }

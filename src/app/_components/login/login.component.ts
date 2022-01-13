@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 onSubmit(f:NgForm){
   for (let i = 0; i < this.usersDB.length; i++) {
     if((f.value.email==this.usersDB[i].email)&&(f.value.pwd==this.usersDB[i].password)){
-          this.AuthentificationService.role.next(this.usersDB[i].Role)
+          this.AuthentificationService.role.next(this.usersDB[i].role)
           this.AuthentificationService.isAuth.next(true)
           this.AuthentificationService.auth=true
           this.AuthentificationService.idAuth=this.usersDB[i].id
