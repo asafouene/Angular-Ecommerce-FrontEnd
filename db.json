@@ -36,7 +36,7 @@
     {
       "id": "2Wp_nd6",
       "name": "ASUS EXPERTBOOK B9",
-      "prix": 5149.998,
+      "prix": "5149.998",
       "img_src": "https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/b/9/b9400cea-kc0452r--6.jpg",
       "desc": "Écran 14 Full HD IPS - Processeur: Intel® Core i7-1165G7 ( 2.80 GHz up to 4,70 GHz Turbo max, 12 Mo de mémoire cache"
     },
@@ -76,11 +76,11 @@
       "id": "lUdKF7p"
     },
     {
+      "id": "QWsOw-P",
       "name": "Xiaomi 11T 8Go/256 Go",
-      "prix": 1659,
+      "prix": "1659",
       "img_src": "https://www.zoom.com.tn/45790-thickbox_default/smartphone-xiaomi-11t-8go256-go-double-sim-blanc.jpg",
-      "desc": "Processeur: MediaTek Dimensity 1200-Ultra ARM Mali GPU, up to 886MHz / RAM: 8 Go / Capacité : 256 Go / Ecran 6.67 pouces FHD+ AMOLED / Résolution: 1080x2400px / appareils photo: 108 MP + 8 MP + 5 MP Flash LED et Frontale 16 MP / Batterie 5000 mAh / Wi-Fi / Bluetooth / GPS / 5G / Android 11 / Dual SIM / Garantie 1 an",
-      "id": "QWsOw-P"
+      "desc": "Processeur: MediaTek Dimensity 1200-Ultra ARM Mali GPU, up to 886MHz / RAM: 8 Go / Capacité : 256 Go / Ecran 6.67 pouces FHD+ AMOLED / Résolution: 1080x2400px / appareils photo: 108 MP + 8 MP + 5 MP Flash LED et Frontale 16 MP / Batterie 5000 mAh / Wi-Fi / Bluetooth / GPS / 5G / Android 11 / Dual SIM / Garantie 1 an"
     },
     {
       "name": "JBL Barre de son 9.1 sans fil Bluetooth",

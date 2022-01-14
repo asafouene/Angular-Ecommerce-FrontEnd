@@ -17,7 +17,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of users">
-        <td><img [(src)]="user.url_img" alt="" style="width: 7rem;height: 6rem;" *ngIf="user.url_img"><img src="https://www.booksie.com/files/profiles/22/mr-anonymous.png" style="width: 7rem;height: 6rem;" *ngIf="!user.url_img"></td>
+        <td><img [(src)]="user.url_img" alt="" style="width: 7rem;height: 6rem;" *ngIf="user.url_img">
+          <img src="https://www.booksie.com/files/profiles/22/mr-anonymous.png" style="width: 7rem;height: 6rem;" *ngIf="!user.url_img">
+        </td>
         <td>{{ user.username}}</td>
         <td>{{user.email}}</td>
         <td>{{roles[user.role]}}</td>
