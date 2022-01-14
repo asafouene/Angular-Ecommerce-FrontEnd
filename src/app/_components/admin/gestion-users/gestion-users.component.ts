@@ -18,7 +18,7 @@ export class GestionUsersComponent implements OnInit {
   fatrash=faTrash
   faplus=faPlus
   loadPage=false
-  roles:any=["Client","Administrateur","Commercial","Comptable"]
+  roles:any=["Client","Administrateur","Moderateur","Commercial","Comptable"]
 
   constructor(private authService:AuthentificationService,private http:HttpClient) { 
     this.authService.OnGetUser().then((data)=>{
