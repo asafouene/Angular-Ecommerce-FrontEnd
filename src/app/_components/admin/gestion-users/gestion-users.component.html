@@ -86,27 +86,27 @@
     <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editModalLabel">Ajout untilisateur </h5>
+            <h5 class="modal-title">Ajout untilisateur </h5>
           </div>
           <form class="modal-body" #fAdd="ngForm">
               <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="nom" [class.text-danger]="username.invalid&&username.touched" [class.text-success]="username.valid&&username.touched" >Nom : </span>
+                  <span class="input-group-text"[class.text-danger]="username.invalid&&username.touched" [class.text-success]="username.valid&&username.touched" >Nom : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input"
                    aria-describedby="inputGroup-sizing-sm" #username="ngModel" ngModel name="username"  [class.is-valid]="username.valid&&username.touched" [class.is-invalid]="username.invalid&&username.touched" required>
                 </div>
                 <div class="input-group input-group-sm mb-3">
                   <span class="input-group-text" [class.text-danger]="email.invalid&&email.touched" [class.text-success]="email.valid&&email.touched">Email : </span>
-                  <input type="text" class="form-control" aria-label="Sizing example input" 
-                  aria-describedby="inputGroup-sizing-sm" #email="ngModel" [class.is-valid]="email.valid&&email.touched" [class.is-invalid]="email.invalid&&email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ngModel name="email" required>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" #email="ngModel" [class.is-valid]="email.valid&&email.touched" [class.is-invalid]="email.invalid&&email.touched" 
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ngModel name="email" required>
                 </div>
                 <div class="input-group input-group-sm mb-3" [class.text-danger]="url_img.invalid&&url_img.touched" [class.text-success]="url_img.valid&&url_img.touched">
-                  <span class="input-group-text" id="image">Image : </span>
+                  <span class="input-group-text">Image : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input" 
                   aria-describedby="inputGroup-sizing-sm" #url_img="ngModel" ngModel name="url_img">
                 </div>
 
                 <div class="input-group">
-                  <span class="input-group-text" id="role" [class.text-danger]="role.invalid&&role.touched" [class.text-success]="role.valid&&role.touched">Role :</span>
+                  <span class="input-group-text" [class.text-danger]="role.invalid&&role.touched" [class.text-success]="role.valid&&role.touched">Role :</span>
                   <select class="form-select" aria-label="Default select" #role="ngModel" ngModel name="role" required [class.is-valid]="role.valid&&role.touched" [class.is-invalid]="role.invalid&&role.touched">
                     <option value="0">Client</option>
                     <option value="1">Administrateur</option>
