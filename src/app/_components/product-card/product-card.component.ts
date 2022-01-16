@@ -1,6 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/_services/product.service';
 import { AuthentificationService } from 'src/app/_services/authentification.service';
+import { UpperCasePipe } from '@angular/common';
 
 
 @Component({
@@ -13,16 +14,25 @@ import { AuthentificationService } from 'src/app/_services/authentification.serv
 })
 export class ProductCardComponent implements OnInit {
 items:any
+itemsFilterd:any[]=[]
 isAuth:any
 newProductInPanier:any
 indiceProductInPanier:any
-pages:any[]=[]
-itemsPerPage:any[]=[]
+pages:any=[]
+itemsPerPage:any=[]
+a:any
 
 
   constructor(private productService:ProductService,private authentifacationService:AuthentificationService) { 
     this.productService.OnGetProduct().then((data)=>{
-    this.items=data}).then(()=>{
+    this.items=data
+          for (let i = 0; i < this.items.length; i++) {
+          this.itemsFilterd[i]=this.items[i]
+        }
+      
+      
+    
+  }).then(()=>{
       this.calculNumberPages()}).then(()=>{
       this.pagination(0)
     })
@@ -32,6 +42,23 @@ itemsPerPage:any[]=[]
         })        
  }
   ngOnInit(): void { 
+    this.productService.srch$.subscribe((res)=>{
+      let j=0
+      this.itemsFilterd=[]
+      for (let i = 0; i < this.items.length; i++) {
+        
+        this.items[i].name=this.items[i].name.toUpperCase()
+        if(this.items[i].name.toUpperCase().startsWith(res)){
+          
+          this.itemsFilterd.push(this.items[i])
+          console.log(this.itemsFilterd);
+        }   
+      }
+      this.calculNumberPages()
+      this.pagination(0)
+        
+                     
+    })
     
    }
    AddToCard(item:any){
@@ -63,8 +90,8 @@ itemsPerPage:any[]=[]
    }
    calculNumberPages(){
     let j =0
-    for (let i = 0; i < this.items.length; i+=3) {
-      this.pages[j]=this.items[i]
+    for (let i = 0; i < this.itemsFilterd.length; i+=3) {
+      this.pages[j]=this.itemsFilterd[i]
       j++
     }
    }
@@ -83,7 +110,7 @@ itemsPerPage:any[]=[]
      this.desactivePagination()
      this.pages[num].status=true
      for (let i = debut; i < fin; i++) {
-      this.itemsPerPage[j]=this.items[i]       
+      this.itemsPerPage[j]=this.itemsFilterd[i]       
       j++
      }
    }

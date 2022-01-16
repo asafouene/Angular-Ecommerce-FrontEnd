@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit {
   pAlertShow=false
   isRegistred:any
   rLink:any
+  srch:any
 
 
   constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {  
@@ -120,6 +121,15 @@ export class HeaderComponent implements OnInit {
           setTimeout(() => {
             this.successShow=!this.successShow
           },6000);
+  }
+  onSearch(f:any){
+    if(f.value.srch){
+      this.productService._srch.next(f.value.srch.toUpperCase())   
+    }
+    else this.productService._srch.next("")
+     
+    //console.log(f.value.srch);
+    
   }
 
 }

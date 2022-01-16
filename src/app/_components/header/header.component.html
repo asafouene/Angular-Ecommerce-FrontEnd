@@ -43,6 +43,9 @@
           <div class="p-2">
             <button class="btn btn-outline-secondary" routerLink="profil"><fa-icon [icon]="fauser"></fa-icon> Profil</button>
             </div>
+            <form class="d-flex" #fsrch="ngForm">
+              <input class="form-control me-2" style="height: ;" ngModel name="srch" type="search" placeholder="Search" aria-label="Search" (keyup)="onSearch(fsrch)">
+            </form>
         </div>
       </div>
     </div>
