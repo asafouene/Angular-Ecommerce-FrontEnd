@@ -43,24 +43,20 @@ a:any
  }
   ngOnInit(): void { 
     this.productService.srch$.subscribe((res)=>{
-      let j=0
       this.itemsFilterd=[]
       for (let i = 0; i < this.items.length; i++) {
-        
         this.items[i].name=this.items[i].name.toUpperCase()
-        if(this.items[i].name.toUpperCase().startsWith(res)){
+        if(this.items[i].name.toUpperCase().indexOf(res)!=-1){
           
           this.itemsFilterd.push(this.items[i])
           console.log(this.itemsFilterd);
         }   
       }
       this.calculNumberPages()
-      this.pagination(0)
-        
-                     
-    })
-    
+      this.pagination(0) 
+    })    
    }
+   
    AddToCard(item:any){
     if(this.productService.pp==0){
       this.productService.panier.next(++this.productService.pp)

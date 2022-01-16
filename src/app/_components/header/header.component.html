@@ -7,27 +7,27 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" [class.active]="" routerLink="/home" style="margin-right: 2rem;"  *ngIf="isAuth">Home</a>
+            <a class="nav-link" [class.active]="" routerLink="/home" style="margin-right: 2rem;"  *ngIf="isAuth" (click)="desactivateProdcutUrl()">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login" style="margin-right: 2rem;" *ngIf="!isAuth">login</a>
+            <a class="nav-link" routerLink="/login" style="margin-right: 2rem;" *ngIf="!isAuth" (click)="desactivateProdcutUrl()">login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/register" style="margin-right: 2rem;" *ngIf="!isAuth">Register</a>
+            <a class="nav-link" routerLink="/register" style="margin-right: 2rem;" *ngIf="!isAuth" (click)="desactivateProdcutUrl()">Register</a>
           </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/product" style="margin-right: 2rem;" *ngIf="isAuth">Produit</a>
+          <a class="nav-link" routerLink="/product" style="margin-right: 2rem;" *ngIf="isAuth" (click)="activateProdcutUrl()">Produit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [class.active]="rLink" routerLink="/gestionproduit" style="margin-right: 2rem;" *ngIf="isAuth&&role">Gestion des produits</a>
+          <a class="nav-link" [class.active]="rLink" routerLink="/gestionproduit" style="margin-right: 2rem;" *ngIf="isAuth&&role" (click)="desactivateProdcutUrl()" >Gestion des produits</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [class.active]="rLink" routerLink="/gestionusers" style="margin-right: 2rem;" *ngIf="isAuth&&role">Gestion des utilisateurs</a>
+          <a class="nav-link" [class.active]="rLink" routerLink="/gestionusers" style="margin-right: 2rem;" *ngIf="isAuth&&role" (click)="desactivateProdcutUrl()" >Gestion des utilisateurs</a>
         </li>
         </ul>
         <div class="d-flex flex-row-reverse" *ngIf="isAuth">
           <div class="p-2">
-          <button type="button" class="btn btn-light position-relative"><a routerLink="/panier">
+          <button type="button" class="btn btn-light position-relative" (click)="desactivateProdcutUrl()"><a routerLink="/panier">
             <img src="https://img.icons8.com/ios/30/000000/shopping-cart-loaded--v2.png"/>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               
@@ -44,7 +44,7 @@
             <button class="btn btn-outline-secondary" routerLink="profil"><fa-icon [icon]="fauser"></fa-icon> Profil</button>
             </div>
             <form class="d-flex" #fsrch="ngForm">
-              <input class="form-control me-2" style="height: ;" ngModel name="srch" type="search" placeholder="Search" aria-label="Search" (keyup)="onSearch(fsrch)">
+              <input class="form-control me-2" style="height: 60%;margin-top: 0.7rem;" ngModel name="srch" type="search" placeholder="Search" aria-label="Search" (keyup)="onSearch(fsrch)" *ngIf="clickedProductUrl" >
             </form>
         </div>
       </div>
