@@ -19,7 +19,8 @@ const routes: Routes = [
   {path:'gestionproduit',component:GestionProduitComponent,canActivate:[AuthGuard]},
   {path:'profil',component:ProfilComponent,canActivate:[AuthGuard]},
   {path:'gestionusers',component:GestionUsersComponent,canActivate:[AuthGuard]},
-  {path:'register',component:RegisterComponent}
+  {path:'register',component:RegisterComponent},
+  { path: '',   redirectTo: '/home', pathMatch: 'full' }
 
 ];
 

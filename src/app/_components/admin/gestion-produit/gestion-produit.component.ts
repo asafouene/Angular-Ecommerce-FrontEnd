@@ -32,12 +32,15 @@ export class GestionProduitComponent implements OnInit {
   }
   OnLoadData(){
     this.productService.OnGetProduct().then((data)=>{
-      this.items=data}).then(()=>{this.loadPage=true})
+      this.items=data}).then(()=>{
+        this.loadPage=true
+      })
   }
   
   OnDelate(id:any){
     this.http.delete("http://localhost:3000/items/"+id).subscribe(()=>{
       this.OnLoadData() 
+      this.authentifacationService.onSuccessNotif(true,"Poduit suprimer avec success")
     })
   }
 
@@ -55,6 +58,7 @@ export class GestionProduitComponent implements OnInit {
     }
     this.http.put("http://localhost:3000/items/"+id ,edititem).subscribe(()=>{
       this.OnLoadData()
+      this.authentifacationService.onSuccessNotif(true,"Produit modifier avec success")
     })
   }
   
@@ -65,6 +69,7 @@ export class GestionProduitComponent implements OnInit {
 
     if(closed){
       this.loadPage=true
+      this.authentifacationService.onSuccessNotif(true,"Poduit ajouter avec success")
     }    
   }
 
