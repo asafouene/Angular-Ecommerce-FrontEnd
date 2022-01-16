@@ -23,7 +23,9 @@
         <td>{{ user.username}}</td>
         <td>{{user.email}}</td>
         <td>{{roles[user.role]}}</td>
-        <td style="text-align: center;vertical-align: middle;width: 9rem;"> <button (click)="onEdit(user)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal"> <fa-icon [icon]="faedit"></fa-icon> </button> <button (click)="onDelate(user.id)" class="btn btn-outline-danger"> <fa-icon [icon]="fatrash"></fa-icon> </button>
+        <td style="text-align: center;vertical-align: middle;width: 9rem;"> 
+          <button (click)="onEdit(user)" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal"> <fa-icon [icon]="faedit"></fa-icon> </button> 
+          <button (click)="onDelate(user)" class="btn btn-outline-danger"> <fa-icon [icon]="fatrash"></fa-icon> </button>
         </td>
       </tr>
     </tbody>

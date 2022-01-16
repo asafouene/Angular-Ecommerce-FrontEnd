@@ -42,7 +42,14 @@ export class GestionUsersComponent implements OnInit {
     
 
   }
-  onDelate(id:any){
+  onDelate(user:any){
+    if(user.role==1){
+      let nbrAdmin=0
+     for (let i = 0; i < this.users.length; i++) {
+      if(this.users[i]==1)nbrAdmin++
+     }
+     if(nbrAdmin<2)this.authService.onAlertNotif(true,"Impossible car vous êtes le seul administrateur !")
+    }
 
   }
   onSave(id:any,f:any){

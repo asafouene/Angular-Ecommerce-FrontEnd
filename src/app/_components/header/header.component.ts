@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   alertAnimation:any=false
   alertShow:any=false
   msg:any
+  aMsg:any
   successAnimation:any=false
   successShow:any=false
   panierAfter=1
@@ -53,14 +54,25 @@ export class HeaderComponent implements OnInit {
     })    
   }
 
-  ngOnInit(): void {    
+  ngOnInit(): void {   
+    this.AuthentificationService.successNotif$.subscribe((data)=>{
+      if(data){
+        this.onSuccessMsg(this.AuthentificationService.msg)
+      }
+    }) 
+    this.AuthentificationService.alertNotif$.subscribe((data2)=>{
+      if(data2){
+        this.onAlertMsg(this.AuthentificationService.aMsg)
+      }
+    }) 
   }
 
   checkIsAuth(){
     this.AuthentificationService.autoriser.subscribe((data)=>{
       this.isAuth=data
       if(this.isAuth===true){
-        this.onSuccessMsg("Connexion avec succes")
+        this.AuthentificationService.onSuccessNotif(true,"connexion avec success")
+        
       }
     })
   }
@@ -70,7 +82,7 @@ export class HeaderComponent implements OnInit {
     this.AuthentificationService.oAccountCreated.subscribe((data)=>{
       this.isRegistred=data
       if(this.isRegistred===true){
-        this.onSuccessMsg("Compte enregistrer avec succes")
+        this.AuthentificationService.onSuccessNotif(true,"Compte enregistrer avec succes")
       }
     })
   }
@@ -85,7 +97,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onAlertMsg(msg:string){
-          this.msg=msg
+          this.aMsg=msg
           this.alertShow=!this.alertShow
           this.alertAnimation=!this.alertAnimation
           setTimeout(() => {

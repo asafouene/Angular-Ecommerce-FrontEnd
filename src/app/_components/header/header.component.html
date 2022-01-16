@@ -22,7 +22,7 @@
           <a class="nav-link" routerLink="/gestionproduit" style="margin-right: 2rem;" *ngIf="isAuth&&role">Gestion des produits</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/gestionusers" style="margin-right: 2rem;" *ngIf="isAuth&&role">Gestion des utilisaterus</a>
+          <a class="nav-link" routerLink="/gestionusers" style="margin-right: 2rem;" *ngIf="isAuth&&role">Gestion des utilisateurs</a>
         </li>
         </ul>
         <div class="d-flex flex-row-reverse" *ngIf="isAuth">
@@ -49,8 +49,8 @@
   </nav>
 
 
-  <div class="alert alert-warning myalert" role="alert" [class.myalertfadein]="alertAnimation" [class.myalertfadeout]="!alertAnimation" *ngIf="alertShow">
-    {{msg}}
+  <div class="alert alert-danger myalert" role="alert" [class.myalertfadein]="alertAnimation" [class.myalertfadeout]="!alertAnimation" *ngIf="alertShow">
+    {{aMsg}}
   </div>
   <div class="alert alert-success myalert" role="alert" [class.myalertfadein]="successAnimation" [class.myalertfadeout]="!successAnimation" *ngIf="successShow">
     {{msg}}
