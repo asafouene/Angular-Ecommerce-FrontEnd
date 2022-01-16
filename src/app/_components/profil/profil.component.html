@@ -1,3 +1,8 @@
+<div *ngIf="!loadPage"class="spinner-grow" style="margin-top:20rem;margin-left: 48%;margin-right: 48%; width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<div *ngIf="loadPage">
 <div class="card mb-3 card-profil">
     <div class="row g-0">
       <div class="col-md-4">
@@ -32,28 +37,30 @@
       <div class="modal-body">
         <form class="modal-body" #fPwd="ngForm">
           <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="nom">Old pawword : </span>
+              <span class="input-group-text">Old pawword : </span>
               <input type="password" class="form-control" aria-label="Sizing example input"
-               aria-describedby="inputGroup-sizing-sm" ngModel #opwd="ngModel" name="opwd">
+               aria-describedby="inputGroup-sizing-sm" ngModel #opwd="ngModel" name="opwd" required>
             </div>
             <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="prix" ngModel>New password : </span>
+              <span class="input-group-text">New password : </span>
               <input type="password" class="form-control" aria-label="Sizing example input" 
-              aria-describedby="inputGroup-sizing-sm" ngModel #npwd="ngModel" name="npwd">
+              aria-describedby="inputGroup-sizing-sm" ngModel #npwd="ngModel" name="npwd" required>
             </div>
             <div class="input-group input-group-sm mb-3">
-              <span class="input-group-text" id="image">Re-type password : </span>
+              <span class="input-group-text">Re-type password : </span>
               <input type="password" class="form-control" aria-label="Sizing example input" 
-              aria-describedby="inputGroup-sizing-sm" ngModel #rnpwd="ngModel" name="rnpwd">
+              aria-describedby="inputGroup-sizing-sm" ngModel #rnpwd="ngModel" name="rnpwd" required>
             </div>
       
           <div class="modal-footer">
             <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onCancel(fPwd)">Close</button>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="onChange(fPwd)">Save changes</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="" (click)="onChange(fPwd)" [disabled]="fPwd.invalid">Save changes</button>
           </div>
         </form>
       </div>
     </div>
   </div>
+</div>
+
 </div>
   

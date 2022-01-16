@@ -12,7 +12,7 @@
       "id": 2,
       "email": "admin@outlook.tn",
       "username": "admin",
-      "password": "1234AZ",
+      "password": "AZERTY12",
       "url_img": "",
       "role": 1
     },
@@ -81,13 +81,6 @@
       "img_src": "https://www.zoom.com.tn/46015-thickbox_default/pc-de-bureau-gamer-msi-mpg-trident-a10-i5-11e-gen-16go-512go-ssd-gtx4go-noir.jpg",
       "desc": "Processeur: Intel Core i5-11400F, up to 4,3 Ghz, 12Mo de cache / Mémoire: 16 Go DDR4 / Disque dur: 512 Go SSD NVMe (Emplacement 2 Disque 2.5'') / Carte graphique: Nvidia Geforce® GTX 1660-6Go-GDDR6 / WiFi / Bluetooth / USB 2.0 / USB 3.0  / USB 3.1 (Type-C) / HDMI / Ethernet / DisplayPort / Windows 10 / Garantie 2 ans - \"Pack : Clavier VIGOR GK30 GAMING + Souris Clutch GM11 offert \"",
       "id": "lUdKF7p"
-    },
-    {
-      "id": "QWsOw-P",
-      "name": "Xiaomi 11T 8Go/256 Go",
-      "prix": "1659",
-      "img_src": "https://www.zoom.com.tn/45790-thickbox_default/smartphone-xiaomi-11t-8go256-go-double-sim-blanc.jpg",
-      "desc": "Processeur: MediaTek Dimensity 1200-Ultra ARM Mali GPU, up to 886MHz / RAM: 8 Go / Capacité : 256 Go / Ecran 6.67 pouces FHD+ AMOLED / Résolution: 1080x2400px / appareils photo: 108 MP + 8 MP + 5 MP Flash LED et Frontale 16 MP / Batterie 5000 mAh / Wi-Fi / Bluetooth / GPS / 5G / Android 11 / Dual SIM / Garantie 1 an"
     },
     {
       "name": "JBL Barre de son 9.1 sans fil Bluetooth",

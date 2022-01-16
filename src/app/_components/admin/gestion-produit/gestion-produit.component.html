@@ -38,22 +38,22 @@
         </div>
         <form class="modal-body" #fEdit="ngForm">
             <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="nom">Nom : </span>
+                <span class="input-group-text">Nom : </span>
                 <input type="text" class="form-control" aria-label="Sizing example input"
                  aria-describedby="inputGroup-sizing-sm" ngModel={{itemEdit.name}} #name="ngModel" name="name">
               </div>
               <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="prix" ngModel>Prix : </span>
+                <span class="input-group-text">Prix : </span>
                 <input type="number" class="form-control" aria-label="Sizing example input" 
                 aria-describedby="inputGroup-sizing-sm" ngModel={{itemEdit.prix}} #prix="ngModel" name="prix">
               </div>
               <div class="input-group input-group-sm mb-3">
-                <span class="input-group-text" id="image">Image : </span>
+                <span class="input-group-text">Image : </span>
                 <input type="text" class="form-control" aria-label="Sizing example input" 
                 aria-describedby="inputGroup-sizing-sm" ngModel={{itemEdit.img_src}} #img_src="ngModel" name="img_src">
               </div>
               <div class="input-group">
-                <span class="input-group-text" id="desc">Description :</span>
+                <span class="input-group-text">Description :</span>
                 <textarea class="form-control" aria-label="With textarea" ngModel={{itemEdit.desc}} #desc="ngModel" name="desc"></textarea>
               </div>
         
@@ -77,22 +77,22 @@
           </div>
           <form class="modal-body" #fAdd="ngForm">
               <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="nom">Nom : </span>
+                  <span class="input-group-text">Nom : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input"
                    aria-describedby="inputGroup-sizing-sm" #name="ngModel" ngModel name="name">
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="prix" ngModel>Prix : </span>
+                  <span class="input-group-text">Prix : </span>
                   <input type="number" class="form-control" aria-label="Sizing example input" 
                   aria-describedby="inputGroup-sizing-sm" #prix="ngModel" ngModel name="prix">
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="image">Image : </span>
+                  <span class="input-group-text">Image : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input" 
                   aria-describedby="inputGroup-sizing-sm" #img_src="ngModel" ngModel name="img_src">
                 </div>
                 <div class="input-group">
-                  <span class="input-group-text" id="desc">Description :</span>
+                  <span class="input-group-text">Description :</span>
                   <textarea class="form-control" aria-label="With textarea" #desc="ngModel" ngModel name="desc"></textarea>
                 </div>
           

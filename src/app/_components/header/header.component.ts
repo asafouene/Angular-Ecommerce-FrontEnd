@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
   pAlertAnimation=false
   pAlertShow=false
   isRegistred:any
+  rLink:any
 
 
   constructor(private AuthentificationService:AuthentificationService,private router:Router,private productService:ProductService) {  
@@ -55,6 +56,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {   
+    this.rLink=this.AuthentificationService.rLink
+
     this.AuthentificationService.successNotif$.subscribe((data)=>{
       if(data){
         this.onSuccessMsg(this.AuthentificationService.msg)

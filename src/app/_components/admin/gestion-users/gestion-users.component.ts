@@ -20,7 +20,8 @@ export class GestionUsersComponent implements OnInit {
   loadPage=false
   roles:any=["Client","Administrateur","Moderateur","Commercial","Comptable"]
 
-  constructor(private authService:AuthentificationService,private http:HttpClient) { 
+  constructor(private authService:AuthentificationService,private http:HttpClient) {
+    this.authService.rLink=true 
     this.authService.OnGetUser().then((data)=>{
       this.users=data
     }).then(()=>{this.loadPage=true})
@@ -33,12 +34,16 @@ export class GestionUsersComponent implements OnInit {
   }
 
   onDelate(user:any){
-    if(user.role==1){
-      let nbrAdmin=0
-     for (let i = 0; i < this.users.length; i++) {
-      if(this.users[i]==1)nbrAdmin++
-     }
-     if(nbrAdmin<2)this.authService.onAlertNotif(true,"Impossible car vous êtes le seul administrateur !")
+    let nbrAdmin=0
+    for (let i = 0; i < this.users.length; i++) {
+      if(this.users[i].role==1)nbrAdmin++      
+    }
+    if(user.id==this.authService.idAuth){
+      console.log("vous ete l'utilisateur a supprimer");
+      
+    }
+    else if(nbrAdmin<2&&user.role==1){
+      this.authService.onAlertNotif(true,"Impossible car vous êtes le seul administrateur !")
     }
     else{
       this.http.delete("http://localhost:3000/users/"+user.id).subscribe((data)=>{        

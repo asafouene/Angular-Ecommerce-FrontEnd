@@ -12,9 +12,9 @@ export class AuthentificationService {
   successNotif$=this._successNotif.asObservable()
   _alertNotif=new Subject<boolean>()
   alertNotif$=this._alertNotif.asObservable()
-
   msg:string=""
   aMsg:string=""
+  rLink:any
 
   idAuth:any=""
   role=new Subject<number>()
