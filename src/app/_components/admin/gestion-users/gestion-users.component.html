@@ -50,7 +50,7 @@
              aria-describedby="inputGroup-sizing-sm" #username="ngModel" ngModel={{userEdit.username}} name="username"  [class.is-valid]="username.valid&&username.touched" [class.is-invalid]="username.invalid&&username.touched" required>
           </div>
           <div class="input-group input-group-sm mb-3">
-            <span class="input-group-text" id="email" ngModel [class.text-danger]="email.invalid&&email.touched" [class.text-success]="email.valid&&email.touched">Email : </span>
+            <span class="input-group-text" id="email" [class.text-danger]="email.invalid&&email.touched" [class.text-success]="email.valid&&email.touched">Email : </span>
             <input type="text" class="form-control" aria-label="Sizing example input" 
             aria-describedby="inputGroup-sizing-sm" #email="ngModel" ngModel={{userEdit.email}} [class.is-valid]="email.valid&&email.touched" [class.is-invalid]="email.invalid&&email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" required>
           </div>
@@ -95,7 +95,7 @@
                    aria-describedby="inputGroup-sizing-sm" #username="ngModel" ngModel name="username"  [class.is-valid]="username.valid&&username.touched" [class.is-invalid]="username.invalid&&username.touched" required>
                 </div>
                 <div class="input-group input-group-sm mb-3">
-                  <span class="input-group-text" id="email" ngModel [class.text-danger]="email.invalid&&email.touched" [class.text-success]="email.valid&&email.touched">Email : </span>
+                  <span class="input-group-text" [class.text-danger]="email.invalid&&email.touched" [class.text-success]="email.valid&&email.touched">Email : </span>
                   <input type="text" class="form-control" aria-label="Sizing example input" 
                   aria-describedby="inputGroup-sizing-sm" #email="ngModel" [class.is-valid]="email.valid&&email.touched" [class.is-invalid]="email.invalid&&email.touched" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" ngModel name="email" required>
                 </div>
