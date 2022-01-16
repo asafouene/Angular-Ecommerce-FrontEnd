@@ -13,6 +13,7 @@ export class ProfilComponent implements OnInit {
   users:any
   myProfil:any
   loadPage=false
+  errorAnimation=false
 
 
   constructor(private authService:AuthentificationService,private http:HttpClient,private router:Router) {
@@ -36,16 +37,24 @@ export class ProfilComponent implements OnInit {
     
     if(this.myProfil.password!=f.value.opwd){
       this.authService.onAlertNotif(true,"ancien mot de passe erroner")
+      this.errorAnimation=true
+      setTimeout(() => {
+        this.errorAnimation=false
+      }, 1000);
+      
     }
     else if(f.value.npwd!=f.value.rnpwd){
       this.authService.onAlertNotif(true,"nouveau mot de passe n'est pas identique")
+      this.errorAnimation=true
+      setTimeout(() => {
+        this.errorAnimation=false
+      }, 1000);
     }
     else{
       this.http.patch("http://localhost:3000/users/"+this.myProfil.id,{password:f.value.npwd}).subscribe(()=>{
         window.location.reload();
       })
     }
-    
     
 
   }
