@@ -75,5 +75,6 @@ export class GestionUsersComponent implements OnInit {
 
   onCancel(f:NgForm){
     f.reset()
+    this.userEdit=[]
   }
 }

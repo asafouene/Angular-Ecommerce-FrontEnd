@@ -44,19 +44,16 @@ a:any
   ngOnInit(): void { 
     this.productService.srch$.subscribe((res)=>{
       this.itemsFilterd=[]
-      for (let i = 0; i < this.items.length; i++) {
-        this.items[i].name=this.items[i].name.toUpperCase()
+      for (let i = 0; i < this.items.length; i++) {        
         if(this.items[i].name.toUpperCase().indexOf(res)!=-1){
-          
           this.itemsFilterd.push(this.items[i])
-          console.log(this.itemsFilterd);
-        }   
+        }
       }
       this.calculNumberPages()
       this.pagination(0) 
-    })    
+    })   
    }
-   
+
    AddToCard(item:any){
     if(this.productService.pp==0){
       this.productService.panier.next(++this.productService.pp)
@@ -86,6 +83,7 @@ a:any
    }
    calculNumberPages(){
     let j =0
+    this.pages=[]
     for (let i = 0; i < this.itemsFilterd.length; i+=3) {
       this.pages[j]=this.itemsFilterd[i]
       j++
@@ -103,8 +101,10 @@ a:any
      let j=0
      debut=(num)*3
      fin=debut+3
-     this.desactivePagination()
-     this.pages[num].status=true
+     console.log(this.itemsFilterd.length)
+     if(this.itemsFilterd.length!=0){
+       this.desactivePagination()
+       this.pages[num].status=true}
      for (let i = debut; i < fin; i++) {
       this.itemsPerPage[j]=this.itemsFilterd[i]       
       j++

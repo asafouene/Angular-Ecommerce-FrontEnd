@@ -59,7 +59,7 @@ export class ProfilComponent implements OnInit {
 
   }
   onCancel(f:NgForm){
-    f.reset
+    f.reset()
   }
 
 }

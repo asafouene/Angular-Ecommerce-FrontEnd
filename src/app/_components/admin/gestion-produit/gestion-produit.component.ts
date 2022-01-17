@@ -74,6 +74,7 @@ export class GestionProduitComponent implements OnInit {
   }
 
   onCancel(f:NgForm){
+    f.reset()
     this.itemEdit=[]
   }
 
