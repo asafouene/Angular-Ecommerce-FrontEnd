@@ -101,7 +101,6 @@ a:any
      let j=0
      debut=(num)*3
      fin=debut+3
-     console.log(this.itemsFilterd.length)
      if(this.itemsFilterd.length!=0){
        this.desactivePagination()
        this.pages[num].status=true}

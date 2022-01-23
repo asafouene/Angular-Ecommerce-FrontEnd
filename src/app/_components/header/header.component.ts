@@ -53,9 +53,9 @@ export class HeaderComponent implements OnInit {
     })
 
     this.AuthentificationService.role.subscribe((data)=>{
-      this.role=data      
+      this.role=data    
     })    
-  }
+      }
 
   ngOnInit(): void {   
     this.rLink=this.AuthentificationService.rLink
@@ -73,13 +73,13 @@ export class HeaderComponent implements OnInit {
   }
 
   checkIsAuth(){
-    this.AuthentificationService.autoriser.subscribe((data)=>{
-      this.isAuth=data
-      if(this.isAuth===true){
-        this.AuthentificationService.onSuccessNotif(true,"connexion avec success")
         
+      if(this.AuthentificationService.token!=null){
+        this.AuthentificationService.onSuccessNotif(true,"connexion avec success")
+        this.isAuth=true
       }
-    })
+      else this.isAuth=false
+    
   }
 
   checkIsRegistred(){
@@ -93,12 +93,17 @@ export class HeaderComponent implements OnInit {
   }
 
   deconnexion(){
-    this.AuthentificationService.isAuth.next(false)
+    sessionStorage.removeItem('token')
+    
     this.productService.panier.next(0)
-    this.router.navigateByUrl('/home')
+    
+    this.AuthentificationService.role.next(0)
     this.productService.DansPanier=[]
     this.productService.panier.next(0)
     this.productService.pp=0
+    this.router.navigateByUrl('/home').then(()=>{window.location.reload()})
+    
+    
   }
 
   onAlertMsg(msg:string){

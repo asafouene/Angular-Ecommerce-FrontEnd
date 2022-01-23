@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
     this.productService.OnGetProduct().then((data)=>{
       this.items=data
       this.firstItem=this.items[0]
+      
+      
       })          
   }
   ngOnInit(): void {
